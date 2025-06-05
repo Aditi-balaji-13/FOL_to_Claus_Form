@@ -1,0 +1,288 @@
+<KB>
+    <Class text='Class:' pos='5:0'>
+        <CONCEPT pos='5:7'>Person</CONCEPT>
+        <SubClassOf text='SubClassOf:' pos='6:4'>
+            <EXISTS>
+                <ROLE pos='6:21'>eats</ROLE>
+                <CONCEPT pos='6:31'>Fruit</CONCEPT>
+            </EXISTS>
+        </SubClassOf>
+        <EquivalentTo text='EquivalentTo:' pos='7:4'>
+            <CONCEPT pos='7:21'>Human</CONCEPT>
+        </EquivalentTo>
+        <DisjointWith text='DisjointWith:' pos='8:4'>
+            <CONCEPT pos='8:21'>Fruit</CONCEPT>
+            <CONCEPT pos='8:28'>Meat</CONCEPT>
+        </DisjointWith>
+        <DisjointUnionOf text='DisjointUnionOf:' pos='9:4'>
+            <CONCEPT pos='9:21'>Man</CONCEPT>
+            <CONCEPT pos='9:26'>Woman</CONCEPT>
+        </DisjointUnionOf>
+    </Class>
+    <Class text='Class:' pos='11:0'>
+        <CONCEPT pos='11:7'>Vegetarian</CONCEPT>
+        <EquivalentTo text='EquivalentTo:' pos='11:19'>
+            <CONCEPT pos='11:33'>Person</CONCEPT>
+            <NOT pos='11:41'>
+                <EXISTS>
+                    <ROLE pos='11:46'>eats</ROLE>
+                    <CONCEPT pos='11:56'>Meat</CONCEPT>
+                </EXISTS>
+            </NOT>
+        </EquivalentTo>
+    </Class>
+    <Class text='Class:' pos='12:0'>
+        <CONCEPT pos='12:7'>Parent</CONCEPT>
+        <EquivalentTo text='EquivalentTo:' pos='12:15'>
+            <AND pos='12:36'>
+                <CONCEPT pos='12:29'>Person</CONCEPT>
+                <EXISTS>
+                    <ROLE pos='12:40'>hasChild</ROLE>
+                    <CONCEPT pos='12:54'>Person</CONCEPT>
+                </EXISTS>
+            </AND>
+        </EquivalentTo>
+    </Class>
+    <Class text='Class:' pos='13:0'>
+        <CONCEPT pos='13:7'>Mother</CONCEPT>
+        <EquivalentTo text='EquivalentTo:' pos='13:15'>
+            <AND pos='13:35'>
+                <CONCEPT pos='13:29'>Woman</CONCEPT>
+                <CONCEPT pos='13:39'>Parent</CONCEPT>
+            </AND>
+        </EquivalentTo>
+    </Class>
+    <Class text='Class:' pos='14:0'>
+        <CONCEPT pos='14:7'>Father</CONCEPT>
+        <EquivalentTo text='EquivalentTo:' pos='14:15'>
+            <AND pos='14:33'>
+                <CONCEPT pos='14:29'>Man</CONCEPT>
+                <CONCEPT pos='14:37'>Parent</CONCEPT>
+            </AND>
+        </EquivalentTo>
+    </Class>
+    <Class text='Class:' pos='16:0'>
+        <CONCEPT pos='16:7'>TOAD</CONCEPT>
+        <EquivalentTo text='EquivalentTo:' pos='17:4'>
+            <AND pos='17:23'>
+                <CONCEPT pos='17:18'>Teen</CONCEPT>
+                <EXISTS>
+                    <ROLE pos='17:27'>owns</ROLE>
+                    <CONCEPT pos='17:37'>AppleDevice</CONCEPT>
+                </EXISTS>
+            </AND>
+        </EquivalentTo>
+        <SubClassOf text='SubClassOf:' pos='18:4'>
+            <CONCEPT pos='18:18'>Happy</CONCEPT>
+        </SubClassOf>
+    </Class>
+    <Class text='Class:' pos='20:0'>
+        <CONCEPT pos='20:7'>EcoFriendly</CONCEPT>
+        <SubClassOf text='SubClassOf:' pos='21:4'>
+            <CONCEPT pos='21:18'>Person</CONCEPT>
+            <FORALL>
+                <ROLE pos='22:18'>owns</ROLE>
+                <FORALL>
+                    <ROLE pos='22:29'>powerSource</ROLE>
+                    <OR pos='22:55'>
+                        <CONCEPT pos='22:47'>Battery</CONCEPT>
+                        <CONCEPT pos='22:58'>Wind</CONCEPT>
+                        <CONCEPT pos='22:66'>Solar</CONCEPT>
+                    </OR>
+                </FORALL>
+            </FORALL>
+            <FORALL>
+                <ROLE pos='23:18'>uses</ROLE>
+                <CONCEPT pos='23:28'>ElectricVehicle</CONCEPT>
+            </FORALL>
+        </SubClassOf>
+    </Class>
+    <Class text='Class:' pos='25:0'>
+        <CONCEPT pos='25:7'>GreenEnergy</CONCEPT>
+        <EquivalentTo text='EquivalentTo:' pos='26:4'>
+            <OR pos='26:26'>
+                <CONCEPT pos='26:18'>Battery</CONCEPT>
+                <CONCEPT pos='26:29'>Wind</CONCEPT>
+                <CONCEPT pos='26:37'>Solar</CONCEPT>
+            </OR>
+        </EquivalentTo>
+    </Class>
+    <ObjectProperty text='ObjectProperty:' pos='32:0'>
+        <ROLE pos='32:16'>hasFamilyMember</ROLE>
+        <Characteristics text='Characteristics:' pos='33:2'>
+            <Symmetric pos='33:19'/>
+        </Characteristics>
+        <Domain text='Domain:' pos='34:2'>
+            <CONCEPT pos='34:10'>Person</CONCEPT>
+        </Domain>
+        <Range text='Range:' pos='35:2'>
+            <CONCEPT pos='35:10'>Person</CONCEPT>
+        </Range>
+    </ObjectProperty>
+    <ObjectProperty text='ObjectProperty:' pos='37:0'>
+        <ROLE pos='37:16'>hasChild</ROLE>
+        <Domain text='Domain:' pos='38:2'>
+            <CONCEPT pos='38:10'>Person</CONCEPT>
+        </Domain>
+        <Range text='Range:' pos='39:2'>
+            <CONCEPT pos='39:10'>Person</CONCEPT>
+        </Range>
+        <InverseOf text='InverseOf:' pos='40:2'>
+            <ROLE pos='40:14'>hasParent</ROLE>
+        </InverseOf>
+        <SubPropertyOf text='SubPropertyOf:' pos='41:2'>
+            <ROLE pos='41:17'>hasFamilyMember</ROLE>
+        </SubPropertyOf>
+    </ObjectProperty>
+    <ObjectProperty text='ObjectProperty:' pos='43:0'>
+        <ROLE pos='43:16'>hasSon</ROLE>
+        <Domain text='Domain:' pos='44:2'>
+            <CONCEPT pos='44:10'>Person</CONCEPT>
+        </Domain>
+        <Range text='Range:' pos='45:2'>
+            <CONCEPT pos='45:10'>Man</CONCEPT>
+        </Range>
+        <SubPropertyOf text='SubPropertyOf:' pos='46:2'>
+            <ROLE pos='46:17'>hasChild</ROLE>
+        </SubPropertyOf>
+    </ObjectProperty>
+    <ObjectProperty text='ObjectProperty:' pos='48:0'>
+        <ROLE pos='48:16'>hasDaughter</ROLE>
+        <Domain text='Domain:' pos='49:2'>
+            <CONCEPT pos='49:10'>Person</CONCEPT>
+        </Domain>
+        <Range text='Range:' pos='50:2'>
+            <CONCEPT pos='50:10'>Woman</CONCEPT>
+        </Range>
+        <SubPropertyOf text='SubPropertyOf:' pos='51:2'>
+            <ROLE pos='51:17'>hasChild</ROLE>
+        </SubPropertyOf>
+    </ObjectProperty>
+    <ObjectProperty text='ObjectProperty:' pos='53:0'>
+        <ROLE pos='53:16'>hasMother</ROLE>
+        <Characteristics text='Characteristics:' pos='54:2'>
+            <Functional pos='54:19'/>
+        </Characteristics>
+        <Domain text='Domain:' pos='55:2'>
+            <CONCEPT pos='55:10'>Person</CONCEPT>
+        </Domain>
+        <Range text='Range:' pos='56:2'>
+            <CONCEPT pos='56:10'>Woman</CONCEPT>
+        </Range>
+        <SubPropertyOf text='SubPropertyOf:' pos='57:2'>
+            <ROLE pos='57:17'>hasParent</ROLE>
+        </SubPropertyOf>
+        <DisjointWith text='DisjointWith:' pos='58:2'>
+            <ROLE pos='58:16'>hasFather</ROLE>
+        </DisjointWith>
+    </ObjectProperty>
+    <ObjectProperty text='ObjectProperty:' pos='60:0'>
+        <ROLE pos='60:16'>hasGrandmother</ROLE>
+        <Domain text='Domain:' pos='61:2'>
+            <CONCEPT pos='61:10'>Person</CONCEPT>
+        </Domain>
+        <Range text='Range:' pos='62:2'>
+            <CONCEPT pos='62:10'>Woman</CONCEPT>
+        </Range>
+        <SubPropertyOf text='SubPropertyOf:' pos='63:2'>
+            <ROLE pos='63:17'>hasFamilyMember</ROLE>
+        </SubPropertyOf>
+        <DisjointWith text='DisjointWith:' pos='64:2'>
+            <ROLE pos='64:16'>hasChild</ROLE>
+        </DisjointWith>
+        <SubPropertyChain text='SubPropertyChain:' pos='65:2'>
+            <ROLE pos='65:20'>hasParent</ROLE>
+            <ROLE pos='65:32'>hasMother</ROLE>
+        </SubPropertyChain>
+    </ObjectProperty>
+    <Individual text='Individual:' pos='71:0'>
+        <INDIVIDUAL pos='71:12'>Lucy</INDIVIDUAL>
+        <Types text='Types:' pos='72:2'>
+            <CONCEPT pos='72:10'>Woman</CONCEPT>
+            <FORALL>
+                <ROLE pos='72:17'>hasChild</ROLE>
+                <CONCEPT pos='72:31'>Woman</CONCEPT>
+            </FORALL>
+            <FILLS>
+                <ROLE pos='72:38'>hasHusband</ROLE>
+                <INDIVIDUAL pos='72:55'>Manny</INDIVIDUAL>
+            </FILLS>
+        </Types>
+        <Facts text='Facts:' pos='73:2'>
+            <FACT>
+                <ROLE pos='73:10'>hasChild</ROLE>
+                <INDIVIDUAL pos='73:19'>Lilly</INDIVIDUAL>
+            </FACT>
+            <FACT>
+                <ROLE pos='73:26'>hasDaughter</ROLE>
+                <INDIVIDUAL pos='73:38'>Lilly</INDIVIDUAL>
+            </FACT>
+            <FACT>
+                <ROLE pos='73:45'>likes</ROLE>
+                <INDIVIDUAL pos='73:51'>Apple</INDIVIDUAL>
+            </FACT>
+            <FACT>
+                <ROLE pos='73:58'>likes</ROLE>
+                <INDIVIDUAL pos='73:64'>Orange</INDIVIDUAL>
+            </FACT>
+        </Facts>
+        <SameAs text='SameAs:' pos='74:2'>
+            <INDIVIDUAL pos='74:10'>SmartLucy</INDIVIDUAL>
+        </SameAs>
+        <DifferentFrom text='DifferentFrom:' pos='75:2'>
+            <INDIVIDUAL pos='75:17'>Manny</INDIVIDUAL>
+            <INDIVIDUAL pos='75:24'>Lilly</INDIVIDUAL>
+            <INDIVIDUAL pos='75:31'>Apple</INDIVIDUAL>
+            <INDIVIDUAL pos='75:38'>Orange</INDIVIDUAL>
+        </DifferentFrom>
+    </Individual>
+    <EquivalentClasses text='EquivalentClasses:' pos='81:0'>
+        <CONCEPT pos='81:19'>NonVegetarian</CONCEPT>
+        <NOT pos='81:34'>
+            <CONCEPT pos='81:38'>Vegetarian</CONCEPT>
+        </NOT>
+    </EquivalentClasses>
+    <EquivalentClasses text='EquivalentClasses:' pos='82:0'>
+        <CONCEPT pos='82:19'>Dead</CONCEPT>
+        <NOT pos='82:25'>
+            <CONCEPT pos='82:29'>Alive</CONCEPT>
+        </NOT>
+    </EquivalentClasses>
+    <DisjointClasses text='DisjointClasses:' pos='84:0'>
+        <CONCEPT pos='84:19'>Fruit</CONCEPT>
+        <CONCEPT pos='84:26'>Meat</CONCEPT>
+    </DisjointClasses>
+    <DisjointClasses text='DisjointClasses:' pos='85:0'>
+        <CONCEPT pos='85:19'>Man</CONCEPT>
+        <CONCEPT pos='85:24'>Woman</CONCEPT>
+    </DisjointClasses>
+    <EquivalentProperties text='EquivalentProperties:' pos='87:0'>
+        <ROLE pos='87:22'>hasChild</ROLE>
+        <ROLE pos='87:32'>hasKid</ROLE>
+    </EquivalentProperties>
+    <DisjointProperties text='DisjointProperties:' pos='88:0'>
+        <ROLE pos='88:22'>hasSon</ROLE>
+        <ROLE pos='88:30'>hasDaughter</ROLE>
+        <ROLE pos='88:43'>hasFather</ROLE>
+        <ROLE pos='88:54'>hasMother</ROLE>
+        <ROLE pos='88:65'>hasGrandmother</ROLE>
+    </DisjointProperties>
+    <SameIndividual text='SameIndividual:' pos='90:0'>
+        <INDIVIDUAL pos='90:16'>Manny</INDIVIDUAL>
+        <INDIVIDUAL pos='90:23'>LazyManny</INDIVIDUAL>
+    </SameIndividual>
+    <SameIndividual text='SameIndividual:' pos='91:0'>
+        <INDIVIDUAL pos='91:16'>Lucy</INDIVIDUAL>
+        <INDIVIDUAL pos='91:22'>SmartLucy</INDIVIDUAL>
+    </SameIndividual>
+    <DifferentIndividuals text='DifferentIndividuals:' pos='92:0'>
+        <INDIVIDUAL pos='92:22'>Manny</INDIVIDUAL>
+        <INDIVIDUAL pos='92:29'>Diego</INDIVIDUAL>
+        <INDIVIDUAL pos='92:36'>Sid</INDIVIDUAL>
+        <INDIVIDUAL pos='92:41'>Lucy</INDIVIDUAL>
+        <INDIVIDUAL pos='92:47'>Manny</INDIVIDUAL>
+        <INDIVIDUAL pos='92:54'>Lilly</INDIVIDUAL>
+        <INDIVIDUAL pos='92:61'>Apple</INDIVIDUAL>
+        <INDIVIDUAL pos='92:68'>Orange</INDIVIDUAL>
+    </DifferentIndividuals>
+</KB>

@@ -1,0 +1,70 @@
+#---------------------------------------------------------------------
+# 7.4 A FIRST EXAMPLE
+#---------------------------------------------------------------------
+
+(counter value: 1)
+(brick name: 'A' size: 10 position: heap)
+(brick name: 'B' size: 30 position: heap)
+(brick name: 'C' size: 20 position: heap)
+
+IF (brick position: heap name: N size: S)
+  -(brick position: heap size: {> S})
+  -(brick position: hand)
+THEN
+   MODIFY 1 (position hand)
+
+IF (brick position: hand)
+   (counter value: I)
+THEN
+   MODIFY 1 (position I)
+   MODIFY 2 (value [I + 1])
+
+#---------------------------------------------------------------------
+# 7.5 A SECOND EXAMPLE
+#---------------------------------------------------------------------
+
+IF (wantDays year: N)
+THEN
+   REMOVE 1
+   ADD (year mod4: [N%4] mod100: [N%100] mod400: [N%400])
+
+IF (year mod400: 0)
+THEN
+   REMOVE 1
+   ADD (hasDays days: 366)
+
+IF (year mod100: 0 mod400: {!= 0})
+THEN
+   REMOVE 1
+   ADD (hasDays days: 365)
+
+IF (year mod4: 0 mod100: {!= 0})
+THEN
+   REMOVE 1
+   ADD (hasDays days: 366)
+
+IF (year mod4: {!= 0})
+THEN
+   REMOVE 1
+   ADD (hasDays days: 365)
+
+#---------------------------------------------------------------------
+# 7.6 CONFLICT RESOLUTION
+#---------------------------------------------------------------------
+
+IF (bird) THEN ADD (canFly)
+
+IF (bird weight: {>100}) THEN ADD (cannotFly)
+
+IF (bird) (penguin) THEN ADD (cannotFly)
+
+#---------------------------------------------------------------------
+# 7.8 APPLICATIONS AND ADVANTAGES
+#---------------------------------------------------------------------
+
+IF (goal is: getUnitDigit)
+   (minuend unit: D)
+   (subtrahend unit: {> D})
+THEN
+   REMOVE 1
+   ADD (goal is: borrowFromTens)

@@ -1,0 +1,354 @@
+<PROGRAM>
+    <WME text='(' pos='5:0'>
+        <TYPE pos='5:1'>counter</TYPE>
+        <ATTRIBUTE name='value' pos='5:9'>
+            <INTEGER pos='5:16'>1</INTEGER>
+        </ATTRIBUTE>
+    </WME>
+    <WME text='(' pos='6:0'>
+        <TYPE pos='6:1'>brick</TYPE>
+        <ATTRIBUTE name='name' pos='6:7'>
+            <STRING pos='6:13'>'A'</STRING>
+        </ATTRIBUTE>
+        <ATTRIBUTE name='size' pos='6:17'>
+            <INTEGER pos='6:23'>10</INTEGER>
+        </ATTRIBUTE>
+        <ATTRIBUTE name='position' pos='6:26'>
+            <CONSTANT pos='6:36'>heap</CONSTANT>
+        </ATTRIBUTE>
+    </WME>
+    <WME text='(' pos='7:0'>
+        <TYPE pos='7:1'>brick</TYPE>
+        <ATTRIBUTE name='name' pos='7:7'>
+            <STRING pos='7:13'>'B'</STRING>
+        </ATTRIBUTE>
+        <ATTRIBUTE name='size' pos='7:17'>
+            <INTEGER pos='7:23'>30</INTEGER>
+        </ATTRIBUTE>
+        <ATTRIBUTE name='position' pos='7:26'>
+            <CONSTANT pos='7:36'>heap</CONSTANT>
+        </ATTRIBUTE>
+    </WME>
+    <WME text='(' pos='8:0'>
+        <TYPE pos='8:1'>brick</TYPE>
+        <ATTRIBUTE name='name' pos='8:7'>
+            <STRING pos='8:13'>'C'</STRING>
+        </ATTRIBUTE>
+        <ATTRIBUTE name='size' pos='8:17'>
+            <INTEGER pos='8:23'>20</INTEGER>
+        </ATTRIBUTE>
+        <ATTRIBUTE name='position' pos='8:26'>
+            <CONSTANT pos='8:36'>heap</CONSTANT>
+        </ATTRIBUTE>
+    </WME>
+    <IF pos='10:0'>
+        <CONDITIONS>
+            <WME text='(' pos='10:3'>
+                <TYPE pos='10:4'>brick</TYPE>
+                <ATTRIBUTE name='position' pos='10:10'>
+                    <CONSTANT pos='10:20'>heap</CONSTANT>
+                </ATTRIBUTE>
+                <ATTRIBUTE name='name' pos='10:25'>
+                    <VARIABLE pos='10:31'>N</VARIABLE>
+                </ATTRIBUTE>
+                <ATTRIBUTE name='size' pos='10:33'>
+                    <VARIABLE pos='10:39'>S</VARIABLE>
+                </ATTRIBUTE>
+            </WME>
+            <NOT text='-' pos='11:2'>
+                <WME text='(' pos='11:3'>
+                    <TYPE pos='11:4'>brick</TYPE>
+                    <ATTRIBUTE name='position' pos='11:10'>
+                        <CONSTANT pos='11:20'>heap</CONSTANT>
+                    </ATTRIBUTE>
+                    <ATTRIBUTE name='size' pos='11:25'>
+                        <GT text='&gt;' pos='11:32'>
+                            <ATTRIBUTE pos='11:25'>size</ATTRIBUTE>
+                            <VARIABLE pos='11:34'>S</VARIABLE>
+                        </GT>
+                    </ATTRIBUTE>
+                </WME>
+            </NOT>
+            <NOT text='-' pos='12:2'>
+                <WME text='(' pos='12:3'>
+                    <TYPE pos='12:4'>brick</TYPE>
+                    <ATTRIBUTE name='position' pos='12:10'>
+                        <CONSTANT pos='12:20'>hand</CONSTANT>
+                    </ATTRIBUTE>
+                </WME>
+            </NOT>
+        </CONDITIONS>
+        <ACTIONS>
+            <MODIFY pos='14:3'>
+                <INTEGER pos='14:10'>1</INTEGER>
+                <ATTRIBUTE pos='14:13'>position</ATTRIBUTE>
+                <CONSTANT pos='14:22'>hand</CONSTANT>
+            </MODIFY>
+        </ACTIONS>
+    </IF>
+    <IF pos='16:0'>
+        <CONDITIONS>
+            <WME text='(' pos='16:3'>
+                <TYPE pos='16:4'>brick</TYPE>
+                <ATTRIBUTE name='position' pos='16:10'>
+                    <CONSTANT pos='16:20'>hand</CONSTANT>
+                </ATTRIBUTE>
+            </WME>
+            <WME text='(' pos='17:3'>
+                <TYPE pos='17:4'>counter</TYPE>
+                <ATTRIBUTE name='value' pos='17:12'>
+                    <VARIABLE pos='17:19'>I</VARIABLE>
+                </ATTRIBUTE>
+            </WME>
+        </CONDITIONS>
+        <ACTIONS>
+            <MODIFY pos='19:3'>
+                <INTEGER pos='19:10'>1</INTEGER>
+                <ATTRIBUTE pos='19:13'>position</ATTRIBUTE>
+                <VARIABLE pos='19:22'>I</VARIABLE>
+            </MODIFY>
+            <MODIFY pos='20:3'>
+                <INTEGER pos='20:10'>2</INTEGER>
+                <ATTRIBUTE pos='20:13'>value</ATTRIBUTE>
+                <ADD text='+' pos='20:22'>
+                    <VARIABLE pos='20:20'>I</VARIABLE>
+                    <INTEGER pos='20:24'>1</INTEGER>
+                </ADD>
+            </MODIFY>
+        </ACTIONS>
+    </IF>
+    <IF pos='26:0'>
+        <CONDITIONS>
+            <WME text='(' pos='26:3'>
+                <TYPE pos='26:4'>wantDays</TYPE>
+                <ATTRIBUTE name='year' pos='26:13'>
+                    <VARIABLE pos='26:19'>N</VARIABLE>
+                </ATTRIBUTE>
+            </WME>
+        </CONDITIONS>
+        <ACTIONS>
+            <REMOVE pos='28:3'>
+                <INTEGER pos='28:10'>1</INTEGER>
+            </REMOVE>
+            <INSERT text='ADD' pos='29:3'>
+                <WME text='(' pos='29:7'>
+                    <TYPE pos='29:8'>year</TYPE>
+                    <ATTRIBUTE name='mod4' pos='29:13'>
+                        <MOD text='%' pos='29:21'>
+                            <VARIABLE pos='29:20'>N</VARIABLE>
+                            <INTEGER pos='29:22'>4</INTEGER>
+                        </MOD>
+                    </ATTRIBUTE>
+                    <ATTRIBUTE name='mod100' pos='29:25'>
+                        <MOD text='%' pos='29:35'>
+                            <VARIABLE pos='29:34'>N</VARIABLE>
+                            <INTEGER pos='29:36'>100</INTEGER>
+                        </MOD>
+                    </ATTRIBUTE>
+                    <ATTRIBUTE name='mod400' pos='29:41'>
+                        <MOD text='%' pos='29:51'>
+                            <VARIABLE pos='29:50'>N</VARIABLE>
+                            <INTEGER pos='29:52'>400</INTEGER>
+                        </MOD>
+                    </ATTRIBUTE>
+                </WME>
+            </INSERT>
+        </ACTIONS>
+    </IF>
+    <IF pos='31:0'>
+        <CONDITIONS>
+            <WME text='(' pos='31:3'>
+                <TYPE pos='31:4'>year</TYPE>
+                <ATTRIBUTE name='mod400' pos='31:9'>
+                    <INTEGER pos='31:17'>0</INTEGER>
+                </ATTRIBUTE>
+            </WME>
+        </CONDITIONS>
+        <ACTIONS>
+            <REMOVE pos='33:3'>
+                <INTEGER pos='33:10'>1</INTEGER>
+            </REMOVE>
+            <INSERT text='ADD' pos='34:3'>
+                <WME text='(' pos='34:7'>
+                    <TYPE pos='34:8'>hasDays</TYPE>
+                    <ATTRIBUTE name='days' pos='34:16'>
+                        <INTEGER pos='34:22'>366</INTEGER>
+                    </ATTRIBUTE>
+                </WME>
+            </INSERT>
+        </ACTIONS>
+    </IF>
+    <IF pos='36:0'>
+        <CONDITIONS>
+            <WME text='(' pos='36:3'>
+                <TYPE pos='36:4'>year</TYPE>
+                <ATTRIBUTE name='mod100' pos='36:9'>
+                    <INTEGER pos='36:17'>0</INTEGER>
+                </ATTRIBUTE>
+                <ATTRIBUTE name='mod400' pos='36:19'>
+                    <NE text='!=' pos='36:28'>
+                        <ATTRIBUTE pos='36:19'>mod400</ATTRIBUTE>
+                        <INTEGER pos='36:31'>0</INTEGER>
+                    </NE>
+                </ATTRIBUTE>
+            </WME>
+        </CONDITIONS>
+        <ACTIONS>
+            <REMOVE pos='38:3'>
+                <INTEGER pos='38:10'>1</INTEGER>
+            </REMOVE>
+            <INSERT text='ADD' pos='39:3'>
+                <WME text='(' pos='39:7'>
+                    <TYPE pos='39:8'>hasDays</TYPE>
+                    <ATTRIBUTE name='days' pos='39:16'>
+                        <INTEGER pos='39:22'>365</INTEGER>
+                    </ATTRIBUTE>
+                </WME>
+            </INSERT>
+        </ACTIONS>
+    </IF>
+    <IF pos='41:0'>
+        <CONDITIONS>
+            <WME text='(' pos='41:3'>
+                <TYPE pos='41:4'>year</TYPE>
+                <ATTRIBUTE name='mod4' pos='41:9'>
+                    <INTEGER pos='41:15'>0</INTEGER>
+                </ATTRIBUTE>
+                <ATTRIBUTE name='mod100' pos='41:17'>
+                    <NE text='!=' pos='41:26'>
+                        <ATTRIBUTE pos='41:17'>mod100</ATTRIBUTE>
+                        <INTEGER pos='41:29'>0</INTEGER>
+                    </NE>
+                </ATTRIBUTE>
+            </WME>
+        </CONDITIONS>
+        <ACTIONS>
+            <REMOVE pos='43:3'>
+                <INTEGER pos='43:10'>1</INTEGER>
+            </REMOVE>
+            <INSERT text='ADD' pos='44:3'>
+                <WME text='(' pos='44:7'>
+                    <TYPE pos='44:8'>hasDays</TYPE>
+                    <ATTRIBUTE name='days' pos='44:16'>
+                        <INTEGER pos='44:22'>366</INTEGER>
+                    </ATTRIBUTE>
+                </WME>
+            </INSERT>
+        </ACTIONS>
+    </IF>
+    <IF pos='46:0'>
+        <CONDITIONS>
+            <WME text='(' pos='46:3'>
+                <TYPE pos='46:4'>year</TYPE>
+                <ATTRIBUTE name='mod4' pos='46:9'>
+                    <NE text='!=' pos='46:16'>
+                        <ATTRIBUTE pos='46:9'>mod4</ATTRIBUTE>
+                        <INTEGER pos='46:19'>0</INTEGER>
+                    </NE>
+                </ATTRIBUTE>
+            </WME>
+        </CONDITIONS>
+        <ACTIONS>
+            <REMOVE pos='48:3'>
+                <INTEGER pos='48:10'>1</INTEGER>
+            </REMOVE>
+            <INSERT text='ADD' pos='49:3'>
+                <WME text='(' pos='49:7'>
+                    <TYPE pos='49:8'>hasDays</TYPE>
+                    <ATTRIBUTE name='days' pos='49:16'>
+                        <INTEGER pos='49:22'>365</INTEGER>
+                    </ATTRIBUTE>
+                </WME>
+            </INSERT>
+        </ACTIONS>
+    </IF>
+    <IF pos='55:0'>
+        <CONDITIONS>
+            <WME text='(' pos='55:3'>
+                <TYPE pos='55:4'>bird</TYPE>
+            </WME>
+        </CONDITIONS>
+        <ACTIONS>
+            <INSERT text='ADD' pos='55:15'>
+                <WME text='(' pos='55:19'>
+                    <TYPE pos='55:20'>canFly</TYPE>
+                </WME>
+            </INSERT>
+        </ACTIONS>
+    </IF>
+    <IF pos='57:0'>
+        <CONDITIONS>
+            <WME text='(' pos='57:3'>
+                <TYPE pos='57:4'>bird</TYPE>
+                <ATTRIBUTE name='weight' pos='57:9'>
+                    <GT text='&gt;' pos='57:18'>
+                        <ATTRIBUTE pos='57:9'>weight</ATTRIBUTE>
+                        <INTEGER pos='57:19'>100</INTEGER>
+                    </GT>
+                </ATTRIBUTE>
+            </WME>
+        </CONDITIONS>
+        <ACTIONS>
+            <INSERT text='ADD' pos='57:30'>
+                <WME text='(' pos='57:34'>
+                    <TYPE pos='57:35'>cannotFly</TYPE>
+                </WME>
+            </INSERT>
+        </ACTIONS>
+    </IF>
+    <IF pos='59:0'>
+        <CONDITIONS>
+            <WME text='(' pos='59:3'>
+                <TYPE pos='59:4'>bird</TYPE>
+            </WME>
+            <WME text='(' pos='59:10'>
+                <TYPE pos='59:11'>penguin</TYPE>
+            </WME>
+        </CONDITIONS>
+        <ACTIONS>
+            <INSERT text='ADD' pos='59:25'>
+                <WME text='(' pos='59:29'>
+                    <TYPE pos='59:30'>cannotFly</TYPE>
+                </WME>
+            </INSERT>
+        </ACTIONS>
+    </IF>
+    <IF pos='65:0'>
+        <CONDITIONS>
+            <WME text='(' pos='65:3'>
+                <TYPE pos='65:4'>goal</TYPE>
+                <ATTRIBUTE name='is' pos='65:9'>
+                    <CONSTANT pos='65:13'>getUnitDigit</CONSTANT>
+                </ATTRIBUTE>
+            </WME>
+            <WME text='(' pos='66:3'>
+                <TYPE pos='66:4'>minuend</TYPE>
+                <ATTRIBUTE name='unit' pos='66:12'>
+                    <VARIABLE pos='66:18'>D</VARIABLE>
+                </ATTRIBUTE>
+            </WME>
+            <WME text='(' pos='67:3'>
+                <TYPE pos='67:4'>subtrahend</TYPE>
+                <ATTRIBUTE name='unit' pos='67:15'>
+                    <GT text='&gt;' pos='67:22'>
+                        <ATTRIBUTE pos='67:15'>unit</ATTRIBUTE>
+                        <VARIABLE pos='67:24'>D</VARIABLE>
+                    </GT>
+                </ATTRIBUTE>
+            </WME>
+        </CONDITIONS>
+        <ACTIONS>
+            <REMOVE pos='69:3'>
+                <INTEGER pos='69:10'>1</INTEGER>
+            </REMOVE>
+            <INSERT text='ADD' pos='70:3'>
+                <WME text='(' pos='70:7'>
+                    <TYPE pos='70:8'>goal</TYPE>
+                    <ATTRIBUTE name='is' pos='70:13'>
+                        <CONSTANT pos='70:17'>borrowFromTens</CONSTANT>
+                    </ATTRIBUTE>
+                </WME>
+            </INSERT>
+        </ACTIONS>
+    </IF>
+</PROGRAM>

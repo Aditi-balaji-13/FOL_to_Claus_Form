@@ -1,0 +1,143 @@
+#----------------------------------------------------------
+# Exercise 2.7
+#----------------------------------------------------------
+
+forall X,Y,Z (  p(X,Y) and p(Y,Z)  implies p(X,Z) ).
+forall X,Y   (  p(X,Y) and p(Y,X)  implies X = Y  ).
+forall X,Y   (  p(a,Y)             implies p(X,b) ).
+
+#----------------------------------------------------------
+# Section 3.4 - Soap-Opera domain
+#----------------------------------------------------------
+
+forall Y   ( rich(Y) and man(Y)     implies loves(Y,jane) ).
+forall Y   ( woman(Y) and Y != jane implies loves(Y,john) ).
+forall X,Y ( loves(X,Y)             implies not blackMails(X,Y) ).
+loves(jane, john) or loves(jane, jim).
+exists X   ( adult(X) and blackMails(X, john) ).
+
+#----------------------------------------------------------
+# Section 3.5
+#----------------------------------------------------------
+
+forall X   ( man(X)         implies not woman(x)            ). # Disjointness
+forall X   ( surgeon(X)     implies doctor(X)               ). # Subtypes
+forall X   ( adult(X)       implies man(X) or woman(X)      ). # Exhaustiveness
+forall X,Y ( marriedTo(X,Y) implies marriedTo(Y,X)          ). # Symmetry
+forall X,Y ( parentOf(X,Y)  implies childOf(Y,X)            ). # Inverse
+forall X,Y ( marriedTo(X,Y) implies person(X) and person(Y) ). # Type restriction
+forall X   ( richMan(X)     iff     rich(X) and man(X)      ). # Full definition
+
+#----------------------------------------------------------
+# Section 3.5 -- using symbols for implies, iff, and not operators
+#----------------------------------------------------------
+
+forall X   ( man(X)         => ~ woman(x) ).                   # Disjointness
+forall X   ( surgeon(X)     => doctor(X) ).                    # Subtypes
+forall X   ( adult(X)       => man(X) or woman(X)).            # Exhaustiveness
+forall X,Y ( marriedTo(X,Y) => marriedTo(Y,X) ).               # Symmetry
+forall X,Y ( parentOf(X,Y)  => childOf(Y,X) ).                 # Inverse
+forall X,Y ( marriedTo(X,Y) => person(X) and person(Y) ).      # Type restriction
+forall X   ( richMan(X)    <=> rich(X) and man(X) ).           # Full definition
+
+
+#----------------------------------------------------------
+# Section 5.2.1
+#----------------------------------------------------------
+# append(A,B,C) means A concatenated with B is C.
+#----------------------------------------------------------
+
+forall A,B,C   ( append(A, B, C) & C=B <= A=[] ).
+forall X,A,B,C ( append([X|A], B, [X|C]) <= append(A, B, C) ).
+
+#----------------------------------------------------------
+# Section 6.1, 6.2
+#----------------------------------------------------------
+# Facts about Family
+# mother(M,X)      - means M is mother of X
+# father(F,X)      - means F is father of X
+# child(C,X)       - means C is child of X
+# parent(P,X)      - means P is parent of X
+# grandparent(G,X) - means G is grand parent of X
+# ancestor(A,X)    - means A is ancestor of X
+#----------------------------------------------------------
+
+forall P,X   ( parent(P,X) <= mother(P,X) ).
+forall P,X   ( parent(P,X) <= father(P,X) ).
+
+forall G,P   ( grandparent(G,X) <= parent(G,P) & parent(P,X) ).
+
+forall A,B   ( ancestor(A,B) <= parent(A,B) ).
+forall A,X,B ( ancestor(A,B) <= parent(A,X) & ancestor(X,B) ).
+
+#-- another version
+forall A,B   ( ancestor2(A,B) <= parent(A,B) ).
+forall A,X,B ( ancestor2(A,B) <= parent(X,B) & ancestor2(A,X) ).
+
+#-- yet another version
+forall A,B   ( ancestor3(A,B) <= parent(A,B) ).
+forall A,X,B ( ancestor3(A,B) <= ancestor3(A,X) & ancestor3(X,B) ).
+
+#----------------------------------------------------------
+# Section 6.3
+#----------------------------------------------------------
+# Fibonacci number
+# fib(N,V) means Nth Fibonacci number is V
+#----------------------------------------------------------
+
+forall N,V   ( fib(N,V)     <= (N=0 & V=1)           ).
+forall N,V   ( fib(N,V)     <= (N=1 & V=1)           ).
+forall N,U,V ( fib(N+2,U+V) <= (fib(N,U) & fib(N+1,V)) ).
+
+#----------------------------------------------------------
+# Fibonacci using succesor function and plus predicate
+#----------------------------------------------------------
+
+forall N,V     ( fib(N,V)       <= N=0 & V=1 ).
+forall N,V     ( fib(N,V)       <= N=1 & V=1 ).
+forall N,U,V,W ( fib(s(s(N)),W) <= fib(N,U) & fib(s(N),V) & plus(U,V,W) ).
+
+#----------------------------------------------------------
+# plus(A,B,C) means A + B = C,
+#  which is computed from plus((A-1),(B+1),C).
+#----------------------------------------------------------
+
+forall A,B,C ( plus(A,B,C) & C=B  <= A=0 ).
+forall A,B,C ( plus(s(A),B,C)     <= plus(A,s(B),C) ).
+
+#----------------------------------------------------------
+# Section 6.5
+#----------------------------------------------------------
+# power(A,B,C)    - means A^B   = C.
+# multiply(A,B,C) - means A * B = C.
+# plus(A,B,C)     - means A + B = C.
+#----------------------------------------------------------
+
+forall N power(0,N,1).
+forall A,N,V ( power(A,N,V)   <=  even(N)     & power(A*A,N/2,V) ).
+forall A,N,V ( power(A,N,A*V) <=  not even(N) & power(A*A,(N-1)/2,V) ).
+
+#----------------------------------------------------------
+# Section 6.6
+#----------------------------------------------------------
+
+forall G,X   ( grandparent(G,X) <= parent(G,P) & parent(P,X) ).
+
+forall X,Y,Z ( cousin(X,Y)      <= not X = Y &
+                                   not sibling(X,Y) &
+                                   grandparent(Z,X) &
+                                   grandparent(Z,Y)
+             ).
+
+forall X, Y  ( americanCousin(X,Y) <= cousin(X,Y) & american(X) ).
+
+#----------------------------------------------------------
+# Section 6.7 -- Negation
+#----------------------------------------------------------
+
+forall N ( composite(N) <= N > 1 &   ~ prime(N) ).
+forall N ( composite(N) <= N > 1 & not prime(N) ).
+
+#----------------------------------------------------------
+# End
+#----------------------------------------------------------

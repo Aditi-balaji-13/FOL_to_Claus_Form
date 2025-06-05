@@ -1,0 +1,25 @@
+#---------------------------------------------------------------------
+# 9.2 A DESCRIPTION LANGUAGE
+#---------------------------------------------------------------------
+
+( BlendedRedWine
+  ==
+  [AND Wine
+       [FILLS :Color red]
+       [EXISTS 2 :GrapeType]
+  ]
+)
+
+( ProgressiveCompany
+  ==
+  [AND Company
+       [EXISTS 7 :Director]
+       [ALL :Manager
+            [AND Woman
+                 [FILLS :Degree phD]
+            ]
+       ]
+       [FILLS :MinSalary 24.00/hour]
+  ]
+)
+

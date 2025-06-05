@@ -1,0 +1,76 @@
+<KB>
+    <PREDICATE name="brother">
+        <CONSTANT>bran</CONSTANT>
+        <CONSTANT>sansa</CONSTANT>
+    </PREDICATE>
+    <PREDICATE name="sister">
+        <CONSTANT>sansa</CONSTANT>
+        <CONSTANT>bran</CONSTANT>
+    </PREDICATE>
+    <PREDICATE name="mother">
+        <CONSTANT>catelyn</CONSTANT>
+        <CONSTANT>bran</CONSTANT>
+    </PREDICATE>
+<OR>
+            <NOT><PREDICATE name="brother">
+                <VARIABLE>X_0</VARIABLE>
+                <VARIABLE>Y_0</VARIABLE>
+            </PREDICATE>
+            </NOT><PREDICATE name="sibling">
+                <VARIABLE>X_0</VARIABLE>
+                <VARIABLE>Y_0</VARIABLE>
+            </PREDICATE>
+        </OR>
+    <OR>
+            <NOT><PREDICATE name="sister">
+                <VARIABLE>X_1</VARIABLE>
+                <VARIABLE>Y_1</VARIABLE>
+            </PREDICATE>
+            </NOT><PREDICATE name="sibling">
+                <VARIABLE>X_1</VARIABLE>
+                <VARIABLE>Y_1</VARIABLE>
+            </PREDICATE>
+        </OR>
+    <OR>
+            <PREDICATE name="mother">
+                <VARIABLE>X_2</VARIABLE>
+                <VARIABLE>Z_2</VARIABLE>
+            </PREDICATE>
+        <AND>
+                <PREDICATE name="mother">
+                    <VARIABLE>X_2</VARIABLE>
+                    <VARIABLE>Y_2</VARIABLE>
+                </PREDICATE>
+                <PREDICATE name="sibling">
+                    <VARIABLE>Y_2</VARIABLE>
+                    <VARIABLE>Z_2</VARIABLE>
+                </PREDICATE>
+            </AND>
+            </OR>
+    <OR>
+            <NOT><PREDICATE name="mother">
+                <VARIABLE>A_3</VARIABLE>
+                <VARIABLE>B_3</VARIABLE>
+            </PREDICATE>
+        </NOT><PREDICATE name="ancestor">
+                <VARIABLE>A_3</VARIABLE>
+                <VARIABLE>B_3</VARIABLE>
+            </PREDICATE>
+            </OR>
+    <OR>
+            <PREDICATE name="ancestor">
+                <VARIABLE>A_4</VARIABLE>
+                <VARIABLE>C_4</VARIABLE>
+            </PREDICATE>
+        <AND>
+                <PREDICATE name="ancestor">
+                    <VARIABLE>A_4</VARIABLE>
+                    <VARIABLE>B_4</VARIABLE>
+                </PREDICATE>
+                <PREDICATE name="mother">
+                    <VARIABLE>B_4</VARIABLE>
+                    <VARIABLE>C_4</VARIABLE>
+                </PREDICATE>
+            </AND>
+            </OR>
+    </KB>

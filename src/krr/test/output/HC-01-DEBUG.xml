@@ -1,0 +1,439 @@
+<PROGRAM>
+    <FACT>
+        <PREDICATE name='hasBrother' pos='5:0'>
+            <CONSTANT pos='5:11'>lucy</CONSTANT>
+            <CONSTANT pos='5:17'>jack</CONSTANT>
+        </PREDICATE>
+    </FACT>
+    <FACT>
+        <PREDICATE name='hasSister' pos='6:0'>
+            <CONSTANT pos='6:10'>jack</CONSTANT>
+            <CONSTANT pos='6:15'>lucy</CONSTANT>
+        </PREDICATE>
+    </FACT>
+    <FACT>
+        <PREDICATE name='hasSibling' pos='7:0'>
+            <CONSTANT pos='7:11'>lucy</CONSTANT>
+            <CONSTANT pos='7:16'>jack</CONSTANT>
+        </PREDICATE>
+    </FACT>
+    <FACT>
+        <PREDICATE name='hasSibling' pos='8:0'>
+            <CONSTANT pos='8:11'>jack</CONSTANT>
+            <CONSTANT pos='8:16'>lucy</CONSTANT>
+        </PREDICATE>
+    </FACT>
+    <FACT>
+        <PREDICATE name='append' pos='16:0'>
+            <NIL pos='16:7'/>
+            <VARIABLE pos='16:11'>B</VARIABLE>
+            <VARIABLE pos='16:14'>B</VARIABLE>
+        </PREDICATE>
+    </FACT>
+    <RULE>
+        <PREDICATE name='append' pos='17:0'>
+            <CONS text='[' pos='17:7'>
+                <VARIABLE pos='17:8'>X</VARIABLE>
+                <VARIABLE pos='17:10'>A</VARIABLE>
+            </CONS>
+            <VARIABLE pos='17:14'>B</VARIABLE>
+            <CONS text='[' pos='17:17'>
+                <VARIABLE pos='17:18'>X</VARIABLE>
+                <VARIABLE pos='17:20'>C</VARIABLE>
+            </CONS>
+        </PREDICATE>
+        <PREDICATE name='append' pos='17:27'>
+            <VARIABLE pos='17:34'>A</VARIABLE>
+            <VARIABLE pos='17:37'>B</VARIABLE>
+            <VARIABLE pos='17:40'>C</VARIABLE>
+        </PREDICATE>
+    </RULE>
+    <QUERY>
+        <PREDICATE name='append' pos='18:0'>
+            <CONS text='[' pos='18:7'>
+                <INTEGER pos='18:8'>1</INTEGER>
+                <CONS text='[' pos='18:10'>
+                    <INTEGER pos='18:11'>2</INTEGER>
+                    <NIL pos='18:13'/>
+                </CONS>
+            </CONS>
+            <CONS text='[' pos='18:18'>
+                <INTEGER pos='18:19'>3</INTEGER>
+                <CONS text='[' pos='18:21'>
+                    <INTEGER pos='18:22'>4</INTEGER>
+                    <NIL pos='18:24'/>
+                </CONS>
+            </CONS>
+            <VARIABLE pos='18:29'>C</VARIABLE>
+        </PREDICATE>
+    </QUERY>
+    <RULE>
+        <PREDICATE name='parent' pos='32:0'>
+            <VARIABLE pos='32:7'>P</VARIABLE>
+            <VARIABLE pos='32:9'>X</VARIABLE>
+        </PREDICATE>
+        <PREDICATE name='mother' pos='32:15'>
+            <VARIABLE pos='32:22'>P</VARIABLE>
+            <VARIABLE pos='32:24'>X</VARIABLE>
+        </PREDICATE>
+    </RULE>
+    <RULE>
+        <PREDICATE name='parent' pos='33:0'>
+            <VARIABLE pos='33:7'>P</VARIABLE>
+            <VARIABLE pos='33:9'>X</VARIABLE>
+        </PREDICATE>
+        <PREDICATE name='father' pos='33:15'>
+            <VARIABLE pos='33:22'>P</VARIABLE>
+            <VARIABLE pos='33:24'>X</VARIABLE>
+        </PREDICATE>
+    </RULE>
+    <RULE>
+        <PREDICATE name='grandparent' pos='35:0'>
+            <VARIABLE pos='35:12'>G</VARIABLE>
+            <VARIABLE pos='35:14'>X</VARIABLE>
+        </PREDICATE>
+        <PREDICATE name='parent' pos='35:20'>
+            <VARIABLE pos='35:27'>G</VARIABLE>
+            <VARIABLE pos='35:29'>P</VARIABLE>
+        </PREDICATE>
+        <PREDICATE name='parent' pos='35:33'>
+            <VARIABLE pos='35:40'>P</VARIABLE>
+            <VARIABLE pos='35:42'>X</VARIABLE>
+        </PREDICATE>
+    </RULE>
+    <RULE>
+        <PREDICATE name='ancestor' pos='37:0'>
+            <VARIABLE pos='37:9'>A</VARIABLE>
+            <VARIABLE pos='37:11'>B</VARIABLE>
+        </PREDICATE>
+        <PREDICATE name='parent' pos='37:17'>
+            <VARIABLE pos='37:24'>A</VARIABLE>
+            <VARIABLE pos='37:26'>B</VARIABLE>
+        </PREDICATE>
+    </RULE>
+    <RULE>
+        <PREDICATE name='ancestor' pos='38:0'>
+            <VARIABLE pos='38:9'>A</VARIABLE>
+            <VARIABLE pos='38:11'>B</VARIABLE>
+        </PREDICATE>
+        <PREDICATE name='parent' pos='38:17'>
+            <VARIABLE pos='38:24'>A</VARIABLE>
+            <VARIABLE pos='38:26'>X</VARIABLE>
+        </PREDICATE>
+        <PREDICATE name='ancestor' pos='38:30'>
+            <VARIABLE pos='38:39'>X</VARIABLE>
+            <VARIABLE pos='38:41'>B</VARIABLE>
+        </PREDICATE>
+    </RULE>
+    <RULE>
+        <PREDICATE name='ancestor2' pos='41:0'>
+            <VARIABLE pos='41:10'>A</VARIABLE>
+            <VARIABLE pos='41:12'>B</VARIABLE>
+        </PREDICATE>
+        <PREDICATE name='parent' pos='41:18'>
+            <VARIABLE pos='41:25'>A</VARIABLE>
+            <VARIABLE pos='41:27'>B</VARIABLE>
+        </PREDICATE>
+    </RULE>
+    <RULE>
+        <PREDICATE name='ancestor2' pos='42:0'>
+            <VARIABLE pos='42:10'>A</VARIABLE>
+            <VARIABLE pos='42:12'>B</VARIABLE>
+        </PREDICATE>
+        <PREDICATE name='parent' pos='42:18'>
+            <VARIABLE pos='42:25'>X</VARIABLE>
+            <VARIABLE pos='42:27'>B</VARIABLE>
+        </PREDICATE>
+        <PREDICATE name='ancestor2' pos='42:31'>
+            <VARIABLE pos='42:41'>A</VARIABLE>
+            <VARIABLE pos='42:43'>X</VARIABLE>
+        </PREDICATE>
+    </RULE>
+    <RULE>
+        <PREDICATE name='ancestor3' pos='45:0'>
+            <VARIABLE pos='45:10'>A</VARIABLE>
+            <VARIABLE pos='45:12'>B</VARIABLE>
+        </PREDICATE>
+        <PREDICATE name='parent' pos='45:18'>
+            <VARIABLE pos='45:25'>A</VARIABLE>
+            <VARIABLE pos='45:27'>B</VARIABLE>
+        </PREDICATE>
+    </RULE>
+    <RULE>
+        <PREDICATE name='ancestor3' pos='46:0'>
+            <VARIABLE pos='46:10'>A</VARIABLE>
+            <VARIABLE pos='46:12'>B</VARIABLE>
+        </PREDICATE>
+        <PREDICATE name='ancestor3' pos='46:18'>
+            <VARIABLE pos='46:28'>A</VARIABLE>
+            <VARIABLE pos='46:30'>X</VARIABLE>
+        </PREDICATE>
+        <PREDICATE name='ancestor3' pos='46:34'>
+            <VARIABLE pos='46:44'>X</VARIABLE>
+            <VARIABLE pos='46:46'>B</VARIABLE>
+        </PREDICATE>
+    </RULE>
+    <FACT>
+        <PREDICATE name='fib' pos='55:0'>
+            <INTEGER pos='55:4'>0</INTEGER>
+            <INTEGER pos='55:6'>1</INTEGER>
+        </PREDICATE>
+    </FACT>
+    <FACT>
+        <PREDICATE name='fib' pos='56:0'>
+            <INTEGER pos='56:4'>1</INTEGER>
+            <INTEGER pos='56:6'>1</INTEGER>
+        </PREDICATE>
+    </FACT>
+    <RULE>
+        <PREDICATE name='fib' pos='57:0'>
+            <ADD text='+' pos='57:5'>
+                <VARIABLE pos='57:4'>N</VARIABLE>
+                <INTEGER pos='57:6'>2</INTEGER>
+            </ADD>
+            <VARIABLE pos='57:8'>W</VARIABLE>
+        </PREDICATE>
+        <PREDICATE name='fib' pos='57:14'>
+            <VARIABLE pos='57:18'>N</VARIABLE>
+            <VARIABLE pos='57:20'>U</VARIABLE>
+        </PREDICATE>
+        <PREDICATE name='fib' pos='57:24'>
+            <ADD text='+' pos='57:29'>
+                <VARIABLE pos='57:28'>N</VARIABLE>
+                <INTEGER pos='57:30'>1</INTEGER>
+            </ADD>
+            <VARIABLE pos='57:32'>V</VARIABLE>
+        </PREDICATE>
+        <EQ text='=' pos='57:42'>
+            <ADD text='+' pos='57:38'>
+                <VARIABLE pos='57:36'>U</VARIABLE>
+                <VARIABLE pos='57:40'>V</VARIABLE>
+            </ADD>
+            <VARIABLE pos='57:44'>W</VARIABLE>
+        </EQ>
+    </RULE>
+    <FACT>
+        <PREDICATE name='fib' pos='63:0'>
+            <INTEGER pos='63:4'>0</INTEGER>
+            <INTEGER pos='63:6'>1</INTEGER>
+        </PREDICATE>
+    </FACT>
+    <FACT>
+        <PREDICATE name='fib' pos='64:0'>
+            <INTEGER pos='64:4'>1</INTEGER>
+            <INTEGER pos='64:6'>1</INTEGER>
+        </PREDICATE>
+    </FACT>
+    <RULE>
+        <PREDICATE name='fib' pos='65:0'>
+            <FUNCTION name='s' pos='65:4'>
+                <FUNCTION name='s' pos='65:6'>
+                    <VARIABLE pos='65:8'>N</VARIABLE>
+                </FUNCTION>
+            </FUNCTION>
+            <VARIABLE pos='65:12'>V</VARIABLE>
+        </PREDICATE>
+        <PREDICATE name='fib' pos='65:18'>
+            <VARIABLE pos='65:22'>N</VARIABLE>
+            <VARIABLE pos='65:24'>V1</VARIABLE>
+        </PREDICATE>
+        <PREDICATE name='fib' pos='65:29'>
+            <FUNCTION name='s' pos='65:33'>
+                <VARIABLE pos='65:35'>N</VARIABLE>
+            </FUNCTION>
+            <VARIABLE pos='65:38'>V2</VARIABLE>
+        </PREDICATE>
+        <PREDICATE name='plus' pos='65:43'>
+            <VARIABLE pos='65:48'>V1</VARIABLE>
+            <VARIABLE pos='65:51'>V2</VARIABLE>
+            <VARIABLE pos='65:54'>V</VARIABLE>
+        </PREDICATE>
+    </RULE>
+    <FACT>
+        <PREDICATE name='plus' pos='72:0'>
+            <INTEGER pos='72:5'>0</INTEGER>
+            <VARIABLE pos='72:7'>C</VARIABLE>
+            <VARIABLE pos='72:9'>C</VARIABLE>
+        </PREDICATE>
+    </FACT>
+    <RULE>
+        <PREDICATE name='plus' pos='73:0'>
+            <FUNCTION name='s' pos='73:5'>
+                <VARIABLE pos='73:7'>A</VARIABLE>
+            </FUNCTION>
+            <VARIABLE pos='73:10'>B</VARIABLE>
+            <VARIABLE pos='73:12'>C</VARIABLE>
+        </PREDICATE>
+        <PREDICATE name='plus' pos='73:18'>
+            <VARIABLE pos='73:23'>A</VARIABLE>
+            <FUNCTION name='s' pos='73:25'>
+                <VARIABLE pos='73:27'>B</VARIABLE>
+            </FUNCTION>
+            <VARIABLE pos='73:30'>C</VARIABLE>
+        </PREDICATE>
+    </RULE>
+    <RULE>
+        <PREDICATE name='power' pos='83:0'>
+            <VARIABLE pos='83:6'>A</VARIABLE>
+            <INTEGER pos='83:8'>0</INTEGER>
+            <VARIABLE pos='83:10'>V</VARIABLE>
+        </PREDICATE>
+        <CUT pos='83:16'/>
+        <EQ text='=' pos='83:20'>
+            <VARIABLE pos='83:19'>V</VARIABLE>
+            <INTEGER pos='83:21'>1</INTEGER>
+        </EQ>
+    </RULE>
+    <RULE>
+        <PREDICATE name='power' pos='85:0'>
+            <VARIABLE pos='85:6'>A</VARIABLE>
+            <VARIABLE pos='85:8'>N</VARIABLE>
+            <VARIABLE pos='85:10'>V</VARIABLE>
+        </PREDICATE>
+        <PREDICATE name='even' pos='85:16'>
+            <VARIABLE pos='85:21'>N</VARIABLE>
+        </PREDICATE>
+        <CUT pos='85:25'/>
+        <PREDICATE name='multiply' pos='86:16'>
+            <VARIABLE pos='86:25'>A</VARIABLE>
+            <VARIABLE pos='86:27'>A</VARIABLE>
+            <VARIABLE pos='86:29'>B</VARIABLE>
+        </PREDICATE>
+        <PREDICATE name='multiply' pos='87:16'>
+            <VARIABLE pos='87:25'>M</VARIABLE>
+            <INTEGER pos='87:27'>2</INTEGER>
+            <VARIABLE pos='87:29'>N</VARIABLE>
+        </PREDICATE>
+        <PREDICATE name='power' pos='88:16'>
+            <VARIABLE pos='88:22'>B</VARIABLE>
+            <VARIABLE pos='88:24'>M</VARIABLE>
+            <VARIABLE pos='88:26'>V</VARIABLE>
+        </PREDICATE>
+    </RULE>
+    <RULE>
+        <PREDICATE name='power' pos='90:0'>
+            <VARIABLE pos='90:6'>A</VARIABLE>
+            <VARIABLE pos='90:8'>N</VARIABLE>
+            <VARIABLE pos='90:10'>V</VARIABLE>
+        </PREDICATE>
+        <PREDICATE name='multiply' pos='90:16'>
+            <VARIABLE pos='90:25'>A</VARIABLE>
+            <VARIABLE pos='90:27'>A</VARIABLE>
+            <VARIABLE pos='90:29'>B</VARIABLE>
+        </PREDICATE>
+        <PREDICATE name='plus' pos='91:16'>
+            <VARIABLE pos='91:21'>N1</VARIABLE>
+            <INTEGER pos='91:24'>1</INTEGER>
+            <VARIABLE pos='91:26'>N</VARIABLE>
+        </PREDICATE>
+        <PREDICATE name='multiple' pos='92:16'>
+            <VARIABLE pos='92:25'>M</VARIABLE>
+            <INTEGER pos='92:27'>2</INTEGER>
+            <VARIABLE pos='92:29'>N1</VARIABLE>
+        </PREDICATE>
+        <PREDICATE name='power' pos='93:16'>
+            <VARIABLE pos='93:22'>B</VARIABLE>
+            <VARIABLE pos='93:24'>M</VARIABLE>
+            <VARIABLE pos='93:26'>V2</VARIABLE>
+        </PREDICATE>
+        <PREDICATE name='multiply' pos='94:16'>
+            <VARIABLE pos='94:25'>V2</VARIABLE>
+            <VARIABLE pos='94:28'>A</VARIABLE>
+            <VARIABLE pos='94:30'>V</VARIABLE>
+        </PREDICATE>
+    </RULE>
+    <RULE>
+        <PREDICATE name='grandparent' pos='100:0'>
+            <VARIABLE pos='100:12'>G</VARIABLE>
+            <VARIABLE pos='100:14'>X</VARIABLE>
+        </PREDICATE>
+        <PREDICATE name='parent' pos='100:20'>
+            <VARIABLE pos='100:27'>G</VARIABLE>
+            <VARIABLE pos='100:29'>P</VARIABLE>
+        </PREDICATE>
+        <PREDICATE name='parent' pos='100:33'>
+            <VARIABLE pos='100:40'>P</VARIABLE>
+            <VARIABLE pos='100:42'>X</VARIABLE>
+        </PREDICATE>
+    </RULE>
+    <RULE>
+        <PREDICATE name='cousin' pos='102:0'>
+            <VARIABLE pos='102:7'>X</VARIABLE>
+            <VARIABLE pos='102:9'>Y</VARIABLE>
+        </PREDICATE>
+        <NE text='!=' pos='102:22'>
+            <VARIABLE pos='102:20'>X</VARIABLE>
+            <VARIABLE pos='102:25'>Y</VARIABLE>
+        </NE>
+        <NOT pos='103:20'>
+            <PREDICATE name='sibling' pos='103:24'>
+                <VARIABLE pos='103:32'>X</VARIABLE>
+                <VARIABLE pos='103:34'>Y</VARIABLE>
+            </PREDICATE>
+        </NOT>
+        <PREDICATE name='grandparent' pos='104:20'>
+            <VARIABLE pos='104:32'>Z</VARIABLE>
+            <VARIABLE pos='104:34'>X</VARIABLE>
+        </PREDICATE>
+        <PREDICATE name='grandparent' pos='105:20'>
+            <VARIABLE pos='105:32'>Z</VARIABLE>
+            <VARIABLE pos='105:34'>Y</VARIABLE>
+        </PREDICATE>
+    </RULE>
+    <RULE>
+        <PREDICATE name='americanCousin' pos='107:0'>
+            <VARIABLE pos='107:15'>X</VARIABLE>
+            <VARIABLE pos='107:17'>Y</VARIABLE>
+        </PREDICATE>
+        <PREDICATE name='cousin' pos='107:23'>
+            <VARIABLE pos='107:30'>X</VARIABLE>
+            <VARIABLE pos='107:32'>Y</VARIABLE>
+        </PREDICATE>
+        <CUT pos='107:36'/>
+        <PREDICATE name='american' pos='107:39'>
+            <VARIABLE pos='107:48'>X</VARIABLE>
+        </PREDICATE>
+    </RULE>
+    <RULE>
+        <PREDICATE name='composite' pos='113:0'>
+            <VARIABLE pos='113:10'>N</VARIABLE>
+        </PREDICATE>
+        <GT text='&gt;' pos='113:18'>
+            <VARIABLE pos='113:16'>N</VARIABLE>
+            <INTEGER pos='113:20'>1</INTEGER>
+        </GT>
+        <NOT text='~' pos='113:23'>
+            <PREDICATE name='prime' pos='113:25'>
+                <VARIABLE pos='113:31'>N</VARIABLE>
+            </PREDICATE>
+        </NOT>
+    </RULE>
+    <RULE>
+        <PREDICATE name='composite' pos='114:0'>
+            <VARIABLE pos='114:10'>N</VARIABLE>
+        </PREDICATE>
+        <GT text='&gt;' pos='114:18'>
+            <VARIABLE pos='114:16'>N</VARIABLE>
+            <INTEGER pos='114:20'>1</INTEGER>
+        </GT>
+        <NOT text='\+' pos='114:23'>
+            <PREDICATE name='prime' pos='114:26'>
+                <VARIABLE pos='114:32'>N</VARIABLE>
+            </PREDICATE>
+        </NOT>
+    </RULE>
+    <RULE>
+        <PREDICATE name='composite' pos='115:0'>
+            <VARIABLE pos='115:10'>N</VARIABLE>
+        </PREDICATE>
+        <GT text='&gt;' pos='115:18'>
+            <VARIABLE pos='115:16'>N</VARIABLE>
+            <INTEGER pos='115:20'>1</INTEGER>
+        </GT>
+        <NOT pos='115:23'>
+            <PREDICATE name='prime' pos='115:28'>
+                <VARIABLE pos='115:34'>N</VARIABLE>
+            </PREDICATE>
+        </NOT>
+    </RULE>
+</PROGRAM>

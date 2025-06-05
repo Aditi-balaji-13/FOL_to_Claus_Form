@@ -1,0 +1,43 @@
+<KB>
+    <EQUIVALENTTO text='==' pos='6:2'>
+        <CONCEPT pos='5:2'>BlendedRedWine</CONCEPT>
+        <AND pos='7:3'>
+            <CONCEPT pos='7:7'>Wine</CONCEPT>
+            <FILLS pos='8:8'>
+                <ROLE pos='8:15'>Color</ROLE>
+                <CONSTANT pos='8:21'>red</CONSTANT>
+            </FILLS>
+            <EXISTS pos='9:8'>
+                <INTEGER pos='9:15'>2</INTEGER>
+                <ROLE pos='9:18'>GrapeType</ROLE>
+            </EXISTS>
+        </AND>
+    </EQUIVALENTTO>
+    <EQUIVALENTTO text='==' pos='14:2'>
+        <CONCEPT pos='13:2'>ProgressiveCompany</CONCEPT>
+        <AND pos='15:3'>
+            <CONCEPT pos='15:7'>Company</CONCEPT>
+            <EXISTS pos='16:8'>
+                <INTEGER pos='16:15'>7</INTEGER>
+                <ROLE pos='16:18'>Director</ROLE>
+            </EXISTS>
+            <ALL pos='17:8'>
+                <ROLE pos='17:13'>Manager</ROLE>
+                <AND pos='18:13'>
+                    <CONCEPT pos='18:17'>Woman</CONCEPT>
+                    <FILLS pos='19:18'>
+                        <ROLE pos='19:25'>Degree</ROLE>
+                        <CONSTANT pos='19:32'>phD</CONSTANT>
+                    </FILLS>
+                </AND>
+            </ALL>
+            <FILLS pos='22:8'>
+                <ROLE pos='22:15'>MinSalary</ROLE>
+                <DIV text='/' pos='22:30'>
+                    <FLOAT pos='22:25'>24.00</FLOAT>
+                    <CONSTANT pos='22:31'>hour</CONSTANT>
+                </DIV>
+            </FILLS>
+        </AND>
+    </EQUIVALENTTO>
+</KB>

@@ -1,0 +1,8 @@
+forall X,Y ( brother(X,Y) => sibling(X,Y) ).
+forall X,Y (sister(X,Y) => sibling(X,Y)).
+forall X,Y,Z (mother(X,Y) & sibling(Y,Z) => mother(X,Z)).
+forall A,B (ancestor(A,B) <= mother(A,B)).
+forall A,B,C (ancestor(A,B) & mother(B,C) => ancestor(A,C)).
+brother(bran,sansa).
+sister(sansa,bran).
+mother(catelyn,bran).

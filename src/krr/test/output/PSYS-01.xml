@@ -1,0 +1,354 @@
+<PROGRAM>
+    <WME>
+        <TYPE>counter</TYPE>
+        <ATTRIBUTE name='value'>
+            <INTEGER>1</INTEGER>
+        </ATTRIBUTE>
+    </WME>
+    <WME>
+        <TYPE>brick</TYPE>
+        <ATTRIBUTE name='name'>
+            <STRING>'A'</STRING>
+        </ATTRIBUTE>
+        <ATTRIBUTE name='size'>
+            <INTEGER>10</INTEGER>
+        </ATTRIBUTE>
+        <ATTRIBUTE name='position'>
+            <CONSTANT>heap</CONSTANT>
+        </ATTRIBUTE>
+    </WME>
+    <WME>
+        <TYPE>brick</TYPE>
+        <ATTRIBUTE name='name'>
+            <STRING>'B'</STRING>
+        </ATTRIBUTE>
+        <ATTRIBUTE name='size'>
+            <INTEGER>30</INTEGER>
+        </ATTRIBUTE>
+        <ATTRIBUTE name='position'>
+            <CONSTANT>heap</CONSTANT>
+        </ATTRIBUTE>
+    </WME>
+    <WME>
+        <TYPE>brick</TYPE>
+        <ATTRIBUTE name='name'>
+            <STRING>'C'</STRING>
+        </ATTRIBUTE>
+        <ATTRIBUTE name='size'>
+            <INTEGER>20</INTEGER>
+        </ATTRIBUTE>
+        <ATTRIBUTE name='position'>
+            <CONSTANT>heap</CONSTANT>
+        </ATTRIBUTE>
+    </WME>
+    <IF>
+        <CONDITIONS>
+            <WME>
+                <TYPE>brick</TYPE>
+                <ATTRIBUTE name='position'>
+                    <CONSTANT>heap</CONSTANT>
+                </ATTRIBUTE>
+                <ATTRIBUTE name='name'>
+                    <VARIABLE>N</VARIABLE>
+                </ATTRIBUTE>
+                <ATTRIBUTE name='size'>
+                    <VARIABLE>S</VARIABLE>
+                </ATTRIBUTE>
+            </WME>
+            <NOT>
+                <WME>
+                    <TYPE>brick</TYPE>
+                    <ATTRIBUTE name='position'>
+                        <CONSTANT>heap</CONSTANT>
+                    </ATTRIBUTE>
+                    <ATTRIBUTE name='size'>
+                        <GT>
+                            <ATTRIBUTE>size</ATTRIBUTE>
+                            <VARIABLE>S</VARIABLE>
+                        </GT>
+                    </ATTRIBUTE>
+                </WME>
+            </NOT>
+            <NOT>
+                <WME>
+                    <TYPE>brick</TYPE>
+                    <ATTRIBUTE name='position'>
+                        <CONSTANT>hand</CONSTANT>
+                    </ATTRIBUTE>
+                </WME>
+            </NOT>
+        </CONDITIONS>
+        <ACTIONS>
+            <MODIFY>
+                <INTEGER>1</INTEGER>
+                <ATTRIBUTE>position</ATTRIBUTE>
+                <CONSTANT>hand</CONSTANT>
+            </MODIFY>
+        </ACTIONS>
+    </IF>
+    <IF>
+        <CONDITIONS>
+            <WME>
+                <TYPE>brick</TYPE>
+                <ATTRIBUTE name='position'>
+                    <CONSTANT>hand</CONSTANT>
+                </ATTRIBUTE>
+            </WME>
+            <WME>
+                <TYPE>counter</TYPE>
+                <ATTRIBUTE name='value'>
+                    <VARIABLE>I</VARIABLE>
+                </ATTRIBUTE>
+            </WME>
+        </CONDITIONS>
+        <ACTIONS>
+            <MODIFY>
+                <INTEGER>1</INTEGER>
+                <ATTRIBUTE>position</ATTRIBUTE>
+                <VARIABLE>I</VARIABLE>
+            </MODIFY>
+            <MODIFY>
+                <INTEGER>2</INTEGER>
+                <ATTRIBUTE>value</ATTRIBUTE>
+                <ADD>
+                    <VARIABLE>I</VARIABLE>
+                    <INTEGER>1</INTEGER>
+                </ADD>
+            </MODIFY>
+        </ACTIONS>
+    </IF>
+    <IF>
+        <CONDITIONS>
+            <WME>
+                <TYPE>wantDays</TYPE>
+                <ATTRIBUTE name='year'>
+                    <VARIABLE>N</VARIABLE>
+                </ATTRIBUTE>
+            </WME>
+        </CONDITIONS>
+        <ACTIONS>
+            <REMOVE>
+                <INTEGER>1</INTEGER>
+            </REMOVE>
+            <INSERT>
+                <WME>
+                    <TYPE>year</TYPE>
+                    <ATTRIBUTE name='mod4'>
+                        <MOD>
+                            <VARIABLE>N</VARIABLE>
+                            <INTEGER>4</INTEGER>
+                        </MOD>
+                    </ATTRIBUTE>
+                    <ATTRIBUTE name='mod100'>
+                        <MOD>
+                            <VARIABLE>N</VARIABLE>
+                            <INTEGER>100</INTEGER>
+                        </MOD>
+                    </ATTRIBUTE>
+                    <ATTRIBUTE name='mod400'>
+                        <MOD>
+                            <VARIABLE>N</VARIABLE>
+                            <INTEGER>400</INTEGER>
+                        </MOD>
+                    </ATTRIBUTE>
+                </WME>
+            </INSERT>
+        </ACTIONS>
+    </IF>
+    <IF>
+        <CONDITIONS>
+            <WME>
+                <TYPE>year</TYPE>
+                <ATTRIBUTE name='mod400'>
+                    <INTEGER>0</INTEGER>
+                </ATTRIBUTE>
+            </WME>
+        </CONDITIONS>
+        <ACTIONS>
+            <REMOVE>
+                <INTEGER>1</INTEGER>
+            </REMOVE>
+            <INSERT>
+                <WME>
+                    <TYPE>hasDays</TYPE>
+                    <ATTRIBUTE name='days'>
+                        <INTEGER>366</INTEGER>
+                    </ATTRIBUTE>
+                </WME>
+            </INSERT>
+        </ACTIONS>
+    </IF>
+    <IF>
+        <CONDITIONS>
+            <WME>
+                <TYPE>year</TYPE>
+                <ATTRIBUTE name='mod100'>
+                    <INTEGER>0</INTEGER>
+                </ATTRIBUTE>
+                <ATTRIBUTE name='mod400'>
+                    <NE>
+                        <ATTRIBUTE>mod400</ATTRIBUTE>
+                        <INTEGER>0</INTEGER>
+                    </NE>
+                </ATTRIBUTE>
+            </WME>
+        </CONDITIONS>
+        <ACTIONS>
+            <REMOVE>
+                <INTEGER>1</INTEGER>
+            </REMOVE>
+            <INSERT>
+                <WME>
+                    <TYPE>hasDays</TYPE>
+                    <ATTRIBUTE name='days'>
+                        <INTEGER>365</INTEGER>
+                    </ATTRIBUTE>
+                </WME>
+            </INSERT>
+        </ACTIONS>
+    </IF>
+    <IF>
+        <CONDITIONS>
+            <WME>
+                <TYPE>year</TYPE>
+                <ATTRIBUTE name='mod4'>
+                    <INTEGER>0</INTEGER>
+                </ATTRIBUTE>
+                <ATTRIBUTE name='mod100'>
+                    <NE>
+                        <ATTRIBUTE>mod100</ATTRIBUTE>
+                        <INTEGER>0</INTEGER>
+                    </NE>
+                </ATTRIBUTE>
+            </WME>
+        </CONDITIONS>
+        <ACTIONS>
+            <REMOVE>
+                <INTEGER>1</INTEGER>
+            </REMOVE>
+            <INSERT>
+                <WME>
+                    <TYPE>hasDays</TYPE>
+                    <ATTRIBUTE name='days'>
+                        <INTEGER>366</INTEGER>
+                    </ATTRIBUTE>
+                </WME>
+            </INSERT>
+        </ACTIONS>
+    </IF>
+    <IF>
+        <CONDITIONS>
+            <WME>
+                <TYPE>year</TYPE>
+                <ATTRIBUTE name='mod4'>
+                    <NE>
+                        <ATTRIBUTE>mod4</ATTRIBUTE>
+                        <INTEGER>0</INTEGER>
+                    </NE>
+                </ATTRIBUTE>
+            </WME>
+        </CONDITIONS>
+        <ACTIONS>
+            <REMOVE>
+                <INTEGER>1</INTEGER>
+            </REMOVE>
+            <INSERT>
+                <WME>
+                    <TYPE>hasDays</TYPE>
+                    <ATTRIBUTE name='days'>
+                        <INTEGER>365</INTEGER>
+                    </ATTRIBUTE>
+                </WME>
+            </INSERT>
+        </ACTIONS>
+    </IF>
+    <IF>
+        <CONDITIONS>
+            <WME>
+                <TYPE>bird</TYPE>
+            </WME>
+        </CONDITIONS>
+        <ACTIONS>
+            <INSERT>
+                <WME>
+                    <TYPE>canFly</TYPE>
+                </WME>
+            </INSERT>
+        </ACTIONS>
+    </IF>
+    <IF>
+        <CONDITIONS>
+            <WME>
+                <TYPE>bird</TYPE>
+                <ATTRIBUTE name='weight'>
+                    <GT>
+                        <ATTRIBUTE>weight</ATTRIBUTE>
+                        <INTEGER>100</INTEGER>
+                    </GT>
+                </ATTRIBUTE>
+            </WME>
+        </CONDITIONS>
+        <ACTIONS>
+            <INSERT>
+                <WME>
+                    <TYPE>cannotFly</TYPE>
+                </WME>
+            </INSERT>
+        </ACTIONS>
+    </IF>
+    <IF>
+        <CONDITIONS>
+            <WME>
+                <TYPE>bird</TYPE>
+            </WME>
+            <WME>
+                <TYPE>penguin</TYPE>
+            </WME>
+        </CONDITIONS>
+        <ACTIONS>
+            <INSERT>
+                <WME>
+                    <TYPE>cannotFly</TYPE>
+                </WME>
+            </INSERT>
+        </ACTIONS>
+    </IF>
+    <IF>
+        <CONDITIONS>
+            <WME>
+                <TYPE>goal</TYPE>
+                <ATTRIBUTE name='is'>
+                    <CONSTANT>getUnitDigit</CONSTANT>
+                </ATTRIBUTE>
+            </WME>
+            <WME>
+                <TYPE>minuend</TYPE>
+                <ATTRIBUTE name='unit'>
+                    <VARIABLE>D</VARIABLE>
+                </ATTRIBUTE>
+            </WME>
+            <WME>
+                <TYPE>subtrahend</TYPE>
+                <ATTRIBUTE name='unit'>
+                    <GT>
+                        <ATTRIBUTE>unit</ATTRIBUTE>
+                        <VARIABLE>D</VARIABLE>
+                    </GT>
+                </ATTRIBUTE>
+            </WME>
+        </CONDITIONS>
+        <ACTIONS>
+            <REMOVE>
+                <INTEGER>1</INTEGER>
+            </REMOVE>
+            <INSERT>
+                <WME>
+                    <TYPE>goal</TYPE>
+                    <ATTRIBUTE name='is'>
+                        <CONSTANT>borrowFromTens</CONSTANT>
+                    </ATTRIBUTE>
+                </WME>
+            </INSERT>
+        </ACTIONS>
+    </IF>
+</PROGRAM>

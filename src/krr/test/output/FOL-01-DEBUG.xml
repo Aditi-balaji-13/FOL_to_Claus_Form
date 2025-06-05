@@ -1,0 +1,975 @@
+<KB>
+    <FORALL pos='5:0'>
+        <VARLIST>
+            <VARIABLE pos='5:7'>X</VARIABLE>
+            <VARIABLE pos='5:9'>Y</VARIABLE>
+            <VARIABLE pos='5:11'>Z</VARIABLE>
+        </VARLIST>
+        <IMPLIES pos='5:35'>
+            <AND pos='5:23'>
+                <PREDICATE name='p' pos='5:16'>
+                    <VARIABLE pos='5:18'>X</VARIABLE>
+                    <VARIABLE pos='5:20'>Y</VARIABLE>
+                </PREDICATE>
+                <PREDICATE name='p' pos='5:27'>
+                    <VARIABLE pos='5:29'>Y</VARIABLE>
+                    <VARIABLE pos='5:31'>Z</VARIABLE>
+                </PREDICATE>
+            </AND>
+            <PREDICATE name='p' pos='5:43'>
+                <VARIABLE pos='5:45'>X</VARIABLE>
+                <VARIABLE pos='5:47'>Z</VARIABLE>
+            </PREDICATE>
+        </IMPLIES>
+    </FORALL>
+    <FORALL pos='6:0'>
+        <VARLIST>
+            <VARIABLE pos='6:7'>X</VARIABLE>
+            <VARIABLE pos='6:9'>Y</VARIABLE>
+        </VARLIST>
+        <IMPLIES pos='6:35'>
+            <AND pos='6:23'>
+                <PREDICATE name='p' pos='6:16'>
+                    <VARIABLE pos='6:18'>X</VARIABLE>
+                    <VARIABLE pos='6:20'>Y</VARIABLE>
+                </PREDICATE>
+                <PREDICATE name='p' pos='6:27'>
+                    <VARIABLE pos='6:29'>Y</VARIABLE>
+                    <VARIABLE pos='6:31'>X</VARIABLE>
+                </PREDICATE>
+            </AND>
+            <EQ text='=' pos='6:45'>
+                <VARIABLE pos='6:43'>X</VARIABLE>
+                <VARIABLE pos='6:47'>Y</VARIABLE>
+            </EQ>
+        </IMPLIES>
+    </FORALL>
+    <FORALL pos='7:0'>
+        <VARLIST>
+            <VARIABLE pos='7:7'>X</VARIABLE>
+            <VARIABLE pos='7:9'>Y</VARIABLE>
+        </VARLIST>
+        <IMPLIES pos='7:35'>
+            <PREDICATE name='p' pos='7:16'>
+                <CONSTANT pos='7:18'>a</CONSTANT>
+                <VARIABLE pos='7:20'>Y</VARIABLE>
+            </PREDICATE>
+            <PREDICATE name='p' pos='7:43'>
+                <VARIABLE pos='7:45'>X</VARIABLE>
+                <CONSTANT pos='7:47'>b</CONSTANT>
+            </PREDICATE>
+        </IMPLIES>
+    </FORALL>
+    <FORALL pos='13:0'>
+        <VARIABLE pos='13:7'>Y</VARIABLE>
+        <IMPLIES pos='13:36'>
+            <AND pos='13:21'>
+                <PREDICATE name='rich' pos='13:13'>
+                    <VARIABLE pos='13:18'>Y</VARIABLE>
+                </PREDICATE>
+                <PREDICATE name='man' pos='13:25'>
+                    <VARIABLE pos='13:29'>Y</VARIABLE>
+                </PREDICATE>
+            </AND>
+            <PREDICATE name='loves' pos='13:44'>
+                <VARIABLE pos='13:50'>Y</VARIABLE>
+                <CONSTANT pos='13:52'>jane</CONSTANT>
+            </PREDICATE>
+        </IMPLIES>
+    </FORALL>
+    <FORALL pos='14:0'>
+        <VARIABLE pos='14:7'>Y</VARIABLE>
+        <IMPLIES pos='14:36'>
+            <AND pos='14:22'>
+                <PREDICATE name='woman' pos='14:13'>
+                    <VARIABLE pos='14:19'>Y</VARIABLE>
+                </PREDICATE>
+                <NE text='!=' pos='14:28'>
+                    <VARIABLE pos='14:26'>Y</VARIABLE>
+                    <CONSTANT pos='14:31'>jane</CONSTANT>
+                </NE>
+            </AND>
+            <PREDICATE name='loves' pos='14:44'>
+                <VARIABLE pos='14:50'>Y</VARIABLE>
+                <CONSTANT pos='14:52'>john</CONSTANT>
+            </PREDICATE>
+        </IMPLIES>
+    </FORALL>
+    <FORALL pos='15:0'>
+        <VARLIST>
+            <VARIABLE pos='15:7'>X</VARIABLE>
+            <VARIABLE pos='15:9'>Y</VARIABLE>
+        </VARLIST>
+        <IMPLIES pos='15:36'>
+            <PREDICATE name='loves' pos='15:13'>
+                <VARIABLE pos='15:19'>X</VARIABLE>
+                <VARIABLE pos='15:21'>Y</VARIABLE>
+            </PREDICATE>
+            <NOT pos='15:44'>
+                <PREDICATE name='blackMails' pos='15:48'>
+                    <VARIABLE pos='15:59'>X</VARIABLE>
+                    <VARIABLE pos='15:61'>Y</VARIABLE>
+                </PREDICATE>
+            </NOT>
+        </IMPLIES>
+    </FORALL>
+    <OR pos='16:18'>
+        <PREDICATE name='loves' pos='16:0'>
+            <CONSTANT pos='16:6'>jane</CONSTANT>
+            <CONSTANT pos='16:12'>john</CONSTANT>
+        </PREDICATE>
+        <PREDICATE name='loves' pos='16:21'>
+            <CONSTANT pos='16:27'>jane</CONSTANT>
+            <CONSTANT pos='16:33'>jim</CONSTANT>
+        </PREDICATE>
+    </OR>
+    <EXISTS pos='17:0'>
+        <VARIABLE pos='17:7'>X</VARIABLE>
+        <AND pos='17:22'>
+            <PREDICATE name='adult' pos='17:13'>
+                <VARIABLE pos='17:19'>X</VARIABLE>
+            </PREDICATE>
+            <PREDICATE name='blackMails' pos='17:26'>
+                <VARIABLE pos='17:37'>X</VARIABLE>
+                <CONSTANT pos='17:40'>john</CONSTANT>
+            </PREDICATE>
+        </AND>
+    </EXISTS>
+    <FORALL pos='23:0'>
+        <VARIABLE pos='23:7'>X</VARIABLE>
+        <IMPLIES pos='23:28'>
+            <PREDICATE name='man' pos='23:13'>
+                <VARIABLE pos='23:17'>X</VARIABLE>
+            </PREDICATE>
+            <NOT pos='23:36'>
+                <PREDICATE name='woman' pos='23:40'>
+                    <CONSTANT pos='23:46'>x</CONSTANT>
+                </PREDICATE>
+            </NOT>
+        </IMPLIES>
+    </FORALL>
+    <FORALL pos='24:0'>
+        <VARIABLE pos='24:7'>X</VARIABLE>
+        <IMPLIES pos='24:28'>
+            <PREDICATE name='surgeon' pos='24:13'>
+                <VARIABLE pos='24:21'>X</VARIABLE>
+            </PREDICATE>
+            <PREDICATE name='doctor' pos='24:36'>
+                <VARIABLE pos='24:43'>X</VARIABLE>
+            </PREDICATE>
+        </IMPLIES>
+    </FORALL>
+    <FORALL pos='25:0'>
+        <VARIABLE pos='25:7'>X</VARIABLE>
+        <IMPLIES pos='25:28'>
+            <PREDICATE name='adult' pos='25:13'>
+                <VARIABLE pos='25:19'>X</VARIABLE>
+            </PREDICATE>
+            <OR pos='25:43'>
+                <PREDICATE name='man' pos='25:36'>
+                    <VARIABLE pos='25:40'>X</VARIABLE>
+                </PREDICATE>
+                <PREDICATE name='woman' pos='25:46'>
+                    <VARIABLE pos='25:52'>X</VARIABLE>
+                </PREDICATE>
+            </OR>
+        </IMPLIES>
+    </FORALL>
+    <FORALL pos='26:0'>
+        <VARLIST>
+            <VARIABLE pos='26:7'>X</VARIABLE>
+            <VARIABLE pos='26:9'>Y</VARIABLE>
+        </VARLIST>
+        <IMPLIES pos='26:28'>
+            <PREDICATE name='marriedTo' pos='26:13'>
+                <VARIABLE pos='26:23'>X</VARIABLE>
+                <VARIABLE pos='26:25'>Y</VARIABLE>
+            </PREDICATE>
+            <PREDICATE name='marriedTo' pos='26:36'>
+                <VARIABLE pos='26:46'>Y</VARIABLE>
+                <VARIABLE pos='26:48'>X</VARIABLE>
+            </PREDICATE>
+        </IMPLIES>
+    </FORALL>
+    <FORALL pos='27:0'>
+        <VARLIST>
+            <VARIABLE pos='27:7'>X</VARIABLE>
+            <VARIABLE pos='27:9'>Y</VARIABLE>
+        </VARLIST>
+        <IMPLIES pos='27:28'>
+            <PREDICATE name='parentOf' pos='27:13'>
+                <VARIABLE pos='27:22'>X</VARIABLE>
+                <VARIABLE pos='27:24'>Y</VARIABLE>
+            </PREDICATE>
+            <PREDICATE name='childOf' pos='27:36'>
+                <VARIABLE pos='27:44'>Y</VARIABLE>
+                <VARIABLE pos='27:46'>X</VARIABLE>
+            </PREDICATE>
+        </IMPLIES>
+    </FORALL>
+    <FORALL pos='28:0'>
+        <VARLIST>
+            <VARIABLE pos='28:7'>X</VARIABLE>
+            <VARIABLE pos='28:9'>Y</VARIABLE>
+        </VARLIST>
+        <IMPLIES pos='28:28'>
+            <PREDICATE name='marriedTo' pos='28:13'>
+                <VARIABLE pos='28:23'>X</VARIABLE>
+                <VARIABLE pos='28:25'>Y</VARIABLE>
+            </PREDICATE>
+            <AND pos='28:46'>
+                <PREDICATE name='person' pos='28:36'>
+                    <VARIABLE pos='28:43'>X</VARIABLE>
+                </PREDICATE>
+                <PREDICATE name='person' pos='28:50'>
+                    <VARIABLE pos='28:57'>Y</VARIABLE>
+                </PREDICATE>
+            </AND>
+        </IMPLIES>
+    </FORALL>
+    <FORALL pos='29:0'>
+        <VARIABLE pos='29:7'>X</VARIABLE>
+        <IFF pos='29:28'>
+            <PREDICATE name='richMan' pos='29:13'>
+                <VARIABLE pos='29:21'>X</VARIABLE>
+            </PREDICATE>
+            <AND pos='29:44'>
+                <PREDICATE name='rich' pos='29:36'>
+                    <VARIABLE pos='29:41'>X</VARIABLE>
+                </PREDICATE>
+                <PREDICATE name='man' pos='29:48'>
+                    <VARIABLE pos='29:52'>X</VARIABLE>
+                </PREDICATE>
+            </AND>
+        </IFF>
+    </FORALL>
+    <FORALL pos='35:0'>
+        <VARIABLE pos='35:7'>X</VARIABLE>
+        <IMPLIES text='=&gt;' pos='35:28'>
+            <PREDICATE name='man' pos='35:13'>
+                <VARIABLE pos='35:17'>X</VARIABLE>
+            </PREDICATE>
+            <NOT text='~' pos='35:31'>
+                <PREDICATE name='woman' pos='35:33'>
+                    <CONSTANT pos='35:39'>x</CONSTANT>
+                </PREDICATE>
+            </NOT>
+        </IMPLIES>
+    </FORALL>
+    <FORALL pos='36:0'>
+        <VARIABLE pos='36:7'>X</VARIABLE>
+        <IMPLIES text='=&gt;' pos='36:28'>
+            <PREDICATE name='surgeon' pos='36:13'>
+                <VARIABLE pos='36:21'>X</VARIABLE>
+            </PREDICATE>
+            <PREDICATE name='doctor' pos='36:31'>
+                <VARIABLE pos='36:38'>X</VARIABLE>
+            </PREDICATE>
+        </IMPLIES>
+    </FORALL>
+    <FORALL pos='37:0'>
+        <VARIABLE pos='37:7'>X</VARIABLE>
+        <IMPLIES text='=&gt;' pos='37:28'>
+            <PREDICATE name='adult' pos='37:13'>
+                <VARIABLE pos='37:19'>X</VARIABLE>
+            </PREDICATE>
+            <OR pos='37:38'>
+                <PREDICATE name='man' pos='37:31'>
+                    <VARIABLE pos='37:35'>X</VARIABLE>
+                </PREDICATE>
+                <PREDICATE name='woman' pos='37:41'>
+                    <VARIABLE pos='37:47'>X</VARIABLE>
+                </PREDICATE>
+            </OR>
+        </IMPLIES>
+    </FORALL>
+    <FORALL pos='38:0'>
+        <VARLIST>
+            <VARIABLE pos='38:7'>X</VARIABLE>
+            <VARIABLE pos='38:9'>Y</VARIABLE>
+        </VARLIST>
+        <IMPLIES text='=&gt;' pos='38:28'>
+            <PREDICATE name='marriedTo' pos='38:13'>
+                <VARIABLE pos='38:23'>X</VARIABLE>
+                <VARIABLE pos='38:25'>Y</VARIABLE>
+            </PREDICATE>
+            <PREDICATE name='marriedTo' pos='38:31'>
+                <VARIABLE pos='38:41'>Y</VARIABLE>
+                <VARIABLE pos='38:43'>X</VARIABLE>
+            </PREDICATE>
+        </IMPLIES>
+    </FORALL>
+    <FORALL pos='39:0'>
+        <VARLIST>
+            <VARIABLE pos='39:7'>X</VARIABLE>
+            <VARIABLE pos='39:9'>Y</VARIABLE>
+        </VARLIST>
+        <IMPLIES text='=&gt;' pos='39:28'>
+            <PREDICATE name='parentOf' pos='39:13'>
+                <VARIABLE pos='39:22'>X</VARIABLE>
+                <VARIABLE pos='39:24'>Y</VARIABLE>
+            </PREDICATE>
+            <PREDICATE name='childOf' pos='39:31'>
+                <VARIABLE pos='39:39'>Y</VARIABLE>
+                <VARIABLE pos='39:41'>X</VARIABLE>
+            </PREDICATE>
+        </IMPLIES>
+    </FORALL>
+    <FORALL pos='40:0'>
+        <VARLIST>
+            <VARIABLE pos='40:7'>X</VARIABLE>
+            <VARIABLE pos='40:9'>Y</VARIABLE>
+        </VARLIST>
+        <IMPLIES text='=&gt;' pos='40:28'>
+            <PREDICATE name='marriedTo' pos='40:13'>
+                <VARIABLE pos='40:23'>X</VARIABLE>
+                <VARIABLE pos='40:25'>Y</VARIABLE>
+            </PREDICATE>
+            <AND pos='40:41'>
+                <PREDICATE name='person' pos='40:31'>
+                    <VARIABLE pos='40:38'>X</VARIABLE>
+                </PREDICATE>
+                <PREDICATE name='person' pos='40:45'>
+                    <VARIABLE pos='40:52'>Y</VARIABLE>
+                </PREDICATE>
+            </AND>
+        </IMPLIES>
+    </FORALL>
+    <FORALL pos='41:0'>
+        <VARIABLE pos='41:7'>X</VARIABLE>
+        <IFF text='&lt;=&gt;' pos='41:27'>
+            <PREDICATE name='richMan' pos='41:13'>
+                <VARIABLE pos='41:21'>X</VARIABLE>
+            </PREDICATE>
+            <AND pos='41:39'>
+                <PREDICATE name='rich' pos='41:31'>
+                    <VARIABLE pos='41:36'>X</VARIABLE>
+                </PREDICATE>
+                <PREDICATE name='man' pos='41:43'>
+                    <VARIABLE pos='41:47'>X</VARIABLE>
+                </PREDICATE>
+            </AND>
+        </IFF>
+    </FORALL>
+    <FORALL pos='50:0'>
+        <VARLIST>
+            <VARIABLE pos='50:7'>A</VARIABLE>
+            <VARIABLE pos='50:9'>B</VARIABLE>
+            <VARIABLE pos='50:11'>C</VARIABLE>
+        </VARLIST>
+        <IMPLIEDBY text='&lt;=' pos='50:39'>
+            <AND text='&amp;' pos='50:33'>
+                <PREDICATE name='append' pos='50:17'>
+                    <VARIABLE pos='50:24'>A</VARIABLE>
+                    <VARIABLE pos='50:27'>B</VARIABLE>
+                    <VARIABLE pos='50:30'>C</VARIABLE>
+                </PREDICATE>
+                <EQ text='=' pos='50:36'>
+                    <VARIABLE pos='50:35'>C</VARIABLE>
+                    <VARIABLE pos='50:37'>B</VARIABLE>
+                </EQ>
+            </AND>
+            <EQ text='=' pos='50:43'>
+                <VARIABLE pos='50:42'>A</VARIABLE>
+                <NIL pos='50:44'/>
+            </EQ>
+        </IMPLIEDBY>
+    </FORALL>
+    <FORALL pos='51:0'>
+        <VARLIST>
+            <VARIABLE pos='51:7'>X</VARIABLE>
+            <VARIABLE pos='51:9'>A</VARIABLE>
+            <VARIABLE pos='51:11'>B</VARIABLE>
+            <VARIABLE pos='51:13'>C</VARIABLE>
+        </VARLIST>
+        <IMPLIEDBY text='&lt;=' pos='51:41'>
+            <PREDICATE name='append' pos='51:17'>
+                <CONS text='[' pos='51:24'>
+                    <VARIABLE pos='51:25'>X</VARIABLE>
+                    <VARIABLE pos='51:27'>A</VARIABLE>
+                </CONS>
+                <VARIABLE pos='51:31'>B</VARIABLE>
+                <CONS text='[' pos='51:34'>
+                    <VARIABLE pos='51:35'>X</VARIABLE>
+                    <VARIABLE pos='51:37'>C</VARIABLE>
+                </CONS>
+            </PREDICATE>
+            <PREDICATE name='append' pos='51:44'>
+                <VARIABLE pos='51:51'>A</VARIABLE>
+                <VARIABLE pos='51:54'>B</VARIABLE>
+                <VARIABLE pos='51:57'>C</VARIABLE>
+            </PREDICATE>
+        </IMPLIEDBY>
+    </FORALL>
+    <FORALL pos='65:0'>
+        <VARLIST>
+            <VARIABLE pos='65:7'>P</VARIABLE>
+            <VARIABLE pos='65:9'>X</VARIABLE>
+        </VARLIST>
+        <IMPLIEDBY text='&lt;=' pos='65:27'>
+            <PREDICATE name='parent' pos='65:15'>
+                <VARIABLE pos='65:22'>P</VARIABLE>
+                <VARIABLE pos='65:24'>X</VARIABLE>
+            </PREDICATE>
+            <PREDICATE name='mother' pos='65:30'>
+                <VARIABLE pos='65:37'>P</VARIABLE>
+                <VARIABLE pos='65:39'>X</VARIABLE>
+            </PREDICATE>
+        </IMPLIEDBY>
+    </FORALL>
+    <FORALL pos='66:0'>
+        <VARLIST>
+            <VARIABLE pos='66:7'>P</VARIABLE>
+            <VARIABLE pos='66:9'>X</VARIABLE>
+        </VARLIST>
+        <IMPLIEDBY text='&lt;=' pos='66:27'>
+            <PREDICATE name='parent' pos='66:15'>
+                <VARIABLE pos='66:22'>P</VARIABLE>
+                <VARIABLE pos='66:24'>X</VARIABLE>
+            </PREDICATE>
+            <PREDICATE name='father' pos='66:30'>
+                <VARIABLE pos='66:37'>P</VARIABLE>
+                <VARIABLE pos='66:39'>X</VARIABLE>
+            </PREDICATE>
+        </IMPLIEDBY>
+    </FORALL>
+    <FORALL pos='68:0'>
+        <VARLIST>
+            <VARIABLE pos='68:7'>G</VARIABLE>
+            <VARIABLE pos='68:9'>P</VARIABLE>
+        </VARLIST>
+        <IMPLIEDBY text='&lt;=' pos='68:32'>
+            <PREDICATE name='grandparent' pos='68:15'>
+                <VARIABLE pos='68:27'>G</VARIABLE>
+                <VARIABLE pos='68:29'>X</VARIABLE>
+            </PREDICATE>
+            <AND text='&amp;' pos='68:47'>
+                <PREDICATE name='parent' pos='68:35'>
+                    <VARIABLE pos='68:42'>G</VARIABLE>
+                    <VARIABLE pos='68:44'>P</VARIABLE>
+                </PREDICATE>
+                <PREDICATE name='parent' pos='68:49'>
+                    <VARIABLE pos='68:56'>P</VARIABLE>
+                    <VARIABLE pos='68:58'>X</VARIABLE>
+                </PREDICATE>
+            </AND>
+        </IMPLIEDBY>
+    </FORALL>
+    <FORALL pos='70:0'>
+        <VARLIST>
+            <VARIABLE pos='70:7'>A</VARIABLE>
+            <VARIABLE pos='70:9'>B</VARIABLE>
+        </VARLIST>
+        <IMPLIEDBY text='&lt;=' pos='70:29'>
+            <PREDICATE name='ancestor' pos='70:15'>
+                <VARIABLE pos='70:24'>A</VARIABLE>
+                <VARIABLE pos='70:26'>B</VARIABLE>
+            </PREDICATE>
+            <PREDICATE name='parent' pos='70:32'>
+                <VARIABLE pos='70:39'>A</VARIABLE>
+                <VARIABLE pos='70:41'>B</VARIABLE>
+            </PREDICATE>
+        </IMPLIEDBY>
+    </FORALL>
+    <FORALL pos='71:0'>
+        <VARLIST>
+            <VARIABLE pos='71:7'>A</VARIABLE>
+            <VARIABLE pos='71:9'>X</VARIABLE>
+            <VARIABLE pos='71:11'>B</VARIABLE>
+        </VARLIST>
+        <IMPLIEDBY text='&lt;=' pos='71:29'>
+            <PREDICATE name='ancestor' pos='71:15'>
+                <VARIABLE pos='71:24'>A</VARIABLE>
+                <VARIABLE pos='71:26'>B</VARIABLE>
+            </PREDICATE>
+            <AND text='&amp;' pos='71:44'>
+                <PREDICATE name='parent' pos='71:32'>
+                    <VARIABLE pos='71:39'>A</VARIABLE>
+                    <VARIABLE pos='71:41'>X</VARIABLE>
+                </PREDICATE>
+                <PREDICATE name='ancestor' pos='71:46'>
+                    <VARIABLE pos='71:55'>X</VARIABLE>
+                    <VARIABLE pos='71:57'>B</VARIABLE>
+                </PREDICATE>
+            </AND>
+        </IMPLIEDBY>
+    </FORALL>
+    <FORALL pos='74:0'>
+        <VARLIST>
+            <VARIABLE pos='74:7'>A</VARIABLE>
+            <VARIABLE pos='74:9'>B</VARIABLE>
+        </VARLIST>
+        <IMPLIEDBY text='&lt;=' pos='74:30'>
+            <PREDICATE name='ancestor2' pos='74:15'>
+                <VARIABLE pos='74:25'>A</VARIABLE>
+                <VARIABLE pos='74:27'>B</VARIABLE>
+            </PREDICATE>
+            <PREDICATE name='parent' pos='74:33'>
+                <VARIABLE pos='74:40'>A</VARIABLE>
+                <VARIABLE pos='74:42'>B</VARIABLE>
+            </PREDICATE>
+        </IMPLIEDBY>
+    </FORALL>
+    <FORALL pos='75:0'>
+        <VARLIST>
+            <VARIABLE pos='75:7'>A</VARIABLE>
+            <VARIABLE pos='75:9'>X</VARIABLE>
+            <VARIABLE pos='75:11'>B</VARIABLE>
+        </VARLIST>
+        <IMPLIEDBY text='&lt;=' pos='75:30'>
+            <PREDICATE name='ancestor2' pos='75:15'>
+                <VARIABLE pos='75:25'>A</VARIABLE>
+                <VARIABLE pos='75:27'>B</VARIABLE>
+            </PREDICATE>
+            <AND text='&amp;' pos='75:45'>
+                <PREDICATE name='parent' pos='75:33'>
+                    <VARIABLE pos='75:40'>X</VARIABLE>
+                    <VARIABLE pos='75:42'>B</VARIABLE>
+                </PREDICATE>
+                <PREDICATE name='ancestor2' pos='75:47'>
+                    <VARIABLE pos='75:57'>A</VARIABLE>
+                    <VARIABLE pos='75:59'>X</VARIABLE>
+                </PREDICATE>
+            </AND>
+        </IMPLIEDBY>
+    </FORALL>
+    <FORALL pos='78:0'>
+        <VARLIST>
+            <VARIABLE pos='78:7'>A</VARIABLE>
+            <VARIABLE pos='78:9'>B</VARIABLE>
+        </VARLIST>
+        <IMPLIEDBY text='&lt;=' pos='78:30'>
+            <PREDICATE name='ancestor3' pos='78:15'>
+                <VARIABLE pos='78:25'>A</VARIABLE>
+                <VARIABLE pos='78:27'>B</VARIABLE>
+            </PREDICATE>
+            <PREDICATE name='parent' pos='78:33'>
+                <VARIABLE pos='78:40'>A</VARIABLE>
+                <VARIABLE pos='78:42'>B</VARIABLE>
+            </PREDICATE>
+        </IMPLIEDBY>
+    </FORALL>
+    <FORALL pos='79:0'>
+        <VARLIST>
+            <VARIABLE pos='79:7'>A</VARIABLE>
+            <VARIABLE pos='79:9'>X</VARIABLE>
+            <VARIABLE pos='79:11'>B</VARIABLE>
+        </VARLIST>
+        <IMPLIEDBY text='&lt;=' pos='79:30'>
+            <PREDICATE name='ancestor3' pos='79:15'>
+                <VARIABLE pos='79:25'>A</VARIABLE>
+                <VARIABLE pos='79:27'>B</VARIABLE>
+            </PREDICATE>
+            <AND text='&amp;' pos='79:48'>
+                <PREDICATE name='ancestor3' pos='79:33'>
+                    <VARIABLE pos='79:43'>A</VARIABLE>
+                    <VARIABLE pos='79:45'>X</VARIABLE>
+                </PREDICATE>
+                <PREDICATE name='ancestor3' pos='79:50'>
+                    <VARIABLE pos='79:60'>X</VARIABLE>
+                    <VARIABLE pos='79:62'>B</VARIABLE>
+                </PREDICATE>
+            </AND>
+        </IMPLIEDBY>
+    </FORALL>
+    <FORALL pos='88:0'>
+        <VARLIST>
+            <VARIABLE pos='88:7'>N</VARIABLE>
+            <VARIABLE pos='88:9'>V</VARIABLE>
+        </VARLIST>
+        <IMPLIEDBY text='&lt;=' pos='88:28'>
+            <PREDICATE name='fib' pos='88:15'>
+                <VARIABLE pos='88:19'>N</VARIABLE>
+                <VARIABLE pos='88:21'>V</VARIABLE>
+            </PREDICATE>
+            <AND text='&amp;' pos='88:36'>
+                <EQ text='=' pos='88:33'>
+                    <VARIABLE pos='88:32'>N</VARIABLE>
+                    <INTEGER pos='88:34'>0</INTEGER>
+                </EQ>
+                <EQ text='=' pos='88:39'>
+                    <VARIABLE pos='88:38'>V</VARIABLE>
+                    <INTEGER pos='88:40'>1</INTEGER>
+                </EQ>
+            </AND>
+        </IMPLIEDBY>
+    </FORALL>
+    <FORALL pos='89:0'>
+        <VARLIST>
+            <VARIABLE pos='89:7'>N</VARIABLE>
+            <VARIABLE pos='89:9'>V</VARIABLE>
+        </VARLIST>
+        <IMPLIEDBY text='&lt;=' pos='89:28'>
+            <PREDICATE name='fib' pos='89:15'>
+                <VARIABLE pos='89:19'>N</VARIABLE>
+                <VARIABLE pos='89:21'>V</VARIABLE>
+            </PREDICATE>
+            <AND text='&amp;' pos='89:36'>
+                <EQ text='=' pos='89:33'>
+                    <VARIABLE pos='89:32'>N</VARIABLE>
+                    <INTEGER pos='89:34'>1</INTEGER>
+                </EQ>
+                <EQ text='=' pos='89:39'>
+                    <VARIABLE pos='89:38'>V</VARIABLE>
+                    <INTEGER pos='89:40'>1</INTEGER>
+                </EQ>
+            </AND>
+        </IMPLIEDBY>
+    </FORALL>
+    <FORALL pos='90:0'>
+        <VARLIST>
+            <VARIABLE pos='90:7'>N</VARIABLE>
+            <VARIABLE pos='90:9'>U</VARIABLE>
+            <VARIABLE pos='90:11'>V</VARIABLE>
+        </VARLIST>
+        <IMPLIEDBY text='&lt;=' pos='90:28'>
+            <PREDICATE name='fib' pos='90:15'>
+                <ADD text='+' pos='90:20'>
+                    <VARIABLE pos='90:19'>N</VARIABLE>
+                    <INTEGER pos='90:21'>2</INTEGER>
+                </ADD>
+                <ADD text='+' pos='90:24'>
+                    <VARIABLE pos='90:23'>U</VARIABLE>
+                    <VARIABLE pos='90:25'>V</VARIABLE>
+                </ADD>
+            </PREDICATE>
+            <AND text='&amp;' pos='90:41'>
+                <PREDICATE name='fib' pos='90:32'>
+                    <VARIABLE pos='90:36'>N</VARIABLE>
+                    <VARIABLE pos='90:38'>U</VARIABLE>
+                </PREDICATE>
+                <PREDICATE name='fib' pos='90:43'>
+                    <ADD text='+' pos='90:48'>
+                        <VARIABLE pos='90:47'>N</VARIABLE>
+                        <INTEGER pos='90:49'>1</INTEGER>
+                    </ADD>
+                    <VARIABLE pos='90:51'>V</VARIABLE>
+                </PREDICATE>
+            </AND>
+        </IMPLIEDBY>
+    </FORALL>
+    <FORALL pos='96:0'>
+        <VARLIST>
+            <VARIABLE pos='96:7'>N</VARIABLE>
+            <VARIABLE pos='96:9'>V</VARIABLE>
+        </VARLIST>
+        <IMPLIEDBY text='&lt;=' pos='96:32'>
+            <PREDICATE name='fib' pos='96:17'>
+                <VARIABLE pos='96:21'>N</VARIABLE>
+                <VARIABLE pos='96:23'>V</VARIABLE>
+            </PREDICATE>
+            <AND text='&amp;' pos='96:39'>
+                <EQ text='=' pos='96:36'>
+                    <VARIABLE pos='96:35'>N</VARIABLE>
+                    <INTEGER pos='96:37'>0</INTEGER>
+                </EQ>
+                <EQ text='=' pos='96:42'>
+                    <VARIABLE pos='96:41'>V</VARIABLE>
+                    <INTEGER pos='96:43'>1</INTEGER>
+                </EQ>
+            </AND>
+        </IMPLIEDBY>
+    </FORALL>
+    <FORALL pos='97:0'>
+        <VARLIST>
+            <VARIABLE pos='97:7'>N</VARIABLE>
+            <VARIABLE pos='97:9'>V</VARIABLE>
+        </VARLIST>
+        <IMPLIEDBY text='&lt;=' pos='97:32'>
+            <PREDICATE name='fib' pos='97:17'>
+                <VARIABLE pos='97:21'>N</VARIABLE>
+                <VARIABLE pos='97:23'>V</VARIABLE>
+            </PREDICATE>
+            <AND text='&amp;' pos='97:39'>
+                <EQ text='=' pos='97:36'>
+                    <VARIABLE pos='97:35'>N</VARIABLE>
+                    <INTEGER pos='97:37'>1</INTEGER>
+                </EQ>
+                <EQ text='=' pos='97:42'>
+                    <VARIABLE pos='97:41'>V</VARIABLE>
+                    <INTEGER pos='97:43'>1</INTEGER>
+                </EQ>
+            </AND>
+        </IMPLIEDBY>
+    </FORALL>
+    <FORALL pos='98:0'>
+        <VARLIST>
+            <VARIABLE pos='98:7'>N</VARIABLE>
+            <VARIABLE pos='98:9'>U</VARIABLE>
+            <VARIABLE pos='98:11'>V</VARIABLE>
+            <VARIABLE pos='98:13'>W</VARIABLE>
+        </VARLIST>
+        <IMPLIEDBY text='&lt;=' pos='98:32'>
+            <PREDICATE name='fib' pos='98:17'>
+                <FUNCTION name='s' pos='98:21'>
+                    <FUNCTION name='s' pos='98:23'>
+                        <VARIABLE pos='98:25'>N</VARIABLE>
+                    </FUNCTION>
+                </FUNCTION>
+                <VARIABLE pos='98:29'>W</VARIABLE>
+            </PREDICATE>
+            <AND text='&amp;' pos='98:58'>
+                <AND text='&amp;' pos='98:44'>
+                    <PREDICATE name='fib' pos='98:35'>
+                        <VARIABLE pos='98:39'>N</VARIABLE>
+                        <VARIABLE pos='98:41'>U</VARIABLE>
+                    </PREDICATE>
+                    <PREDICATE name='fib' pos='98:46'>
+                        <FUNCTION name='s' pos='98:50'>
+                            <VARIABLE pos='98:52'>N</VARIABLE>
+                        </FUNCTION>
+                        <VARIABLE pos='98:55'>V</VARIABLE>
+                    </PREDICATE>
+                </AND>
+                <PREDICATE name='plus' pos='98:60'>
+                    <VARIABLE pos='98:65'>U</VARIABLE>
+                    <VARIABLE pos='98:67'>V</VARIABLE>
+                    <VARIABLE pos='98:69'>W</VARIABLE>
+                </PREDICATE>
+            </AND>
+        </IMPLIEDBY>
+    </FORALL>
+    <FORALL pos='105:0'>
+        <VARLIST>
+            <VARIABLE pos='105:7'>A</VARIABLE>
+            <VARIABLE pos='105:9'>B</VARIABLE>
+            <VARIABLE pos='105:11'>C</VARIABLE>
+        </VARLIST>
+        <IMPLIEDBY text='&lt;=' pos='105:34'>
+            <AND text='&amp;' pos='105:27'>
+                <PREDICATE name='plus' pos='105:15'>
+                    <VARIABLE pos='105:20'>A</VARIABLE>
+                    <VARIABLE pos='105:22'>B</VARIABLE>
+                    <VARIABLE pos='105:24'>C</VARIABLE>
+                </PREDICATE>
+                <EQ text='=' pos='105:30'>
+                    <VARIABLE pos='105:29'>C</VARIABLE>
+                    <VARIABLE pos='105:31'>B</VARIABLE>
+                </EQ>
+            </AND>
+            <EQ text='=' pos='105:38'>
+                <VARIABLE pos='105:37'>A</VARIABLE>
+                <INTEGER pos='105:39'>0</INTEGER>
+            </EQ>
+        </IMPLIEDBY>
+    </FORALL>
+    <FORALL pos='106:0'>
+        <VARLIST>
+            <VARIABLE pos='106:7'>A</VARIABLE>
+            <VARIABLE pos='106:9'>B</VARIABLE>
+            <VARIABLE pos='106:11'>C</VARIABLE>
+        </VARLIST>
+        <IMPLIEDBY text='&lt;=' pos='106:34'>
+            <PREDICATE name='plus' pos='106:15'>
+                <FUNCTION name='s' pos='106:20'>
+                    <VARIABLE pos='106:22'>A</VARIABLE>
+                </FUNCTION>
+                <VARIABLE pos='106:25'>B</VARIABLE>
+                <VARIABLE pos='106:27'>C</VARIABLE>
+            </PREDICATE>
+            <PREDICATE name='plus' pos='106:37'>
+                <VARIABLE pos='106:42'>A</VARIABLE>
+                <FUNCTION name='s' pos='106:44'>
+                    <VARIABLE pos='106:46'>B</VARIABLE>
+                </FUNCTION>
+                <VARIABLE pos='106:49'>C</VARIABLE>
+            </PREDICATE>
+        </IMPLIEDBY>
+    </FORALL>
+    <FORALL pos='116:0'>
+        <VARIABLE pos='116:7'>N</VARIABLE>
+        <PREDICATE name='power' pos='116:9'>
+            <INTEGER pos='116:15'>0</INTEGER>
+            <VARIABLE pos='116:17'>N</VARIABLE>
+            <INTEGER pos='116:19'>1</INTEGER>
+        </PREDICATE>
+    </FORALL>
+    <FORALL pos='117:0'>
+        <VARLIST>
+            <VARIABLE pos='117:7'>A</VARIABLE>
+            <VARIABLE pos='117:9'>N</VARIABLE>
+            <VARIABLE pos='117:11'>V</VARIABLE>
+        </VARLIST>
+        <IMPLIEDBY text='&lt;=' pos='117:30'>
+            <PREDICATE name='power' pos='117:15'>
+                <VARIABLE pos='117:21'>A</VARIABLE>
+                <VARIABLE pos='117:23'>N</VARIABLE>
+                <VARIABLE pos='117:25'>V</VARIABLE>
+            </PREDICATE>
+            <AND text='&amp;' pos='117:46'>
+                <PREDICATE name='even' pos='117:34'>
+                    <VARIABLE pos='117:39'>N</VARIABLE>
+                </PREDICATE>
+                <PREDICATE name='power' pos='117:48'>
+                    <MUL text='*' pos='117:55'>
+                        <VARIABLE pos='117:54'>A</VARIABLE>
+                        <VARIABLE pos='117:56'>A</VARIABLE>
+                    </MUL>
+                    <DIV text='/' pos='117:59'>
+                        <VARIABLE pos='117:58'>N</VARIABLE>
+                        <INTEGER pos='117:60'>2</INTEGER>
+                    </DIV>
+                    <VARIABLE pos='117:62'>V</VARIABLE>
+                </PREDICATE>
+            </AND>
+        </IMPLIEDBY>
+    </FORALL>
+    <FORALL pos='118:0'>
+        <VARLIST>
+            <VARIABLE pos='118:7'>A</VARIABLE>
+            <VARIABLE pos='118:9'>N</VARIABLE>
+            <VARIABLE pos='118:11'>V</VARIABLE>
+        </VARLIST>
+        <IMPLIEDBY text='&lt;=' pos='118:30'>
+            <PREDICATE name='power' pos='118:15'>
+                <VARIABLE pos='118:21'>A</VARIABLE>
+                <VARIABLE pos='118:23'>N</VARIABLE>
+                <MUL text='*' pos='118:26'>
+                    <VARIABLE pos='118:25'>A</VARIABLE>
+                    <VARIABLE pos='118:27'>V</VARIABLE>
+                </MUL>
+            </PREDICATE>
+            <AND text='&amp;' pos='118:46'>
+                <NOT pos='118:34'>
+                    <PREDICATE name='even' pos='118:38'>
+                        <VARIABLE pos='118:43'>N</VARIABLE>
+                    </PREDICATE>
+                </NOT>
+                <PREDICATE name='power' pos='118:48'>
+                    <MUL text='*' pos='118:55'>
+                        <VARIABLE pos='118:54'>A</VARIABLE>
+                        <VARIABLE pos='118:56'>A</VARIABLE>
+                    </MUL>
+                    <DIV text='/' pos='118:63'>
+                        <SUB text='-' pos='118:60'>
+                            <VARIABLE pos='118:59'>N</VARIABLE>
+                            <INTEGER pos='118:61'>1</INTEGER>
+                        </SUB>
+                        <INTEGER pos='118:64'>2</INTEGER>
+                    </DIV>
+                    <VARIABLE pos='118:66'>V</VARIABLE>
+                </PREDICATE>
+            </AND>
+        </IMPLIEDBY>
+    </FORALL>
+    <FORALL pos='124:0'>
+        <VARLIST>
+            <VARIABLE pos='124:7'>G</VARIABLE>
+            <VARIABLE pos='124:9'>X</VARIABLE>
+        </VARLIST>
+        <IMPLIEDBY text='&lt;=' pos='124:32'>
+            <PREDICATE name='grandparent' pos='124:15'>
+                <VARIABLE pos='124:27'>G</VARIABLE>
+                <VARIABLE pos='124:29'>X</VARIABLE>
+            </PREDICATE>
+            <AND text='&amp;' pos='124:47'>
+                <PREDICATE name='parent' pos='124:35'>
+                    <VARIABLE pos='124:42'>G</VARIABLE>
+                    <VARIABLE pos='124:44'>P</VARIABLE>
+                </PREDICATE>
+                <PREDICATE name='parent' pos='124:49'>
+                    <VARIABLE pos='124:56'>P</VARIABLE>
+                    <VARIABLE pos='124:58'>X</VARIABLE>
+                </PREDICATE>
+            </AND>
+        </IMPLIEDBY>
+    </FORALL>
+    <FORALL pos='126:0'>
+        <VARLIST>
+            <VARIABLE pos='126:7'>X</VARIABLE>
+            <VARIABLE pos='126:9'>Y</VARIABLE>
+            <VARIABLE pos='126:11'>Z</VARIABLE>
+        </VARLIST>
+        <IMPLIEDBY text='&lt;=' pos='126:32'>
+            <PREDICATE name='cousin' pos='126:15'>
+                <VARIABLE pos='126:22'>X</VARIABLE>
+                <VARIABLE pos='126:24'>Y</VARIABLE>
+            </PREDICATE>
+            <AND text='&amp;' pos='128:52'>
+                <AND text='&amp;' pos='127:52'>
+                    <AND text='&amp;' pos='126:45'>
+                        <NOT pos='126:35'>
+                            <EQ text='=' pos='126:41'>
+                                <VARIABLE pos='126:39'>X</VARIABLE>
+                                <VARIABLE pos='126:43'>Y</VARIABLE>
+                            </EQ>
+                        </NOT>
+                        <NOT pos='127:35'>
+                            <PREDICATE name='sibling' pos='127:39'>
+                                <VARIABLE pos='127:47'>X</VARIABLE>
+                                <VARIABLE pos='127:49'>Y</VARIABLE>
+                            </PREDICATE>
+                        </NOT>
+                    </AND>
+                    <PREDICATE name='grandparent' pos='128:35'>
+                        <VARIABLE pos='128:47'>Z</VARIABLE>
+                        <VARIABLE pos='128:49'>X</VARIABLE>
+                    </PREDICATE>
+                </AND>
+                <PREDICATE name='grandparent' pos='129:35'>
+                    <VARIABLE pos='129:47'>Z</VARIABLE>
+                    <VARIABLE pos='129:49'>Y</VARIABLE>
+                </PREDICATE>
+            </AND>
+        </IMPLIEDBY>
+    </FORALL>
+    <FORALL pos='132:0'>
+        <VARLIST>
+            <VARIABLE pos='132:7'>X</VARIABLE>
+            <VARIABLE pos='132:10'>Y</VARIABLE>
+        </VARLIST>
+        <IMPLIEDBY text='&lt;=' pos='132:35'>
+            <PREDICATE name='americanCousin' pos='132:15'>
+                <VARIABLE pos='132:30'>X</VARIABLE>
+                <VARIABLE pos='132:32'>Y</VARIABLE>
+            </PREDICATE>
+            <AND text='&amp;' pos='132:50'>
+                <PREDICATE name='cousin' pos='132:38'>
+                    <VARIABLE pos='132:45'>X</VARIABLE>
+                    <VARIABLE pos='132:47'>Y</VARIABLE>
+                </PREDICATE>
+                <PREDICATE name='american' pos='132:52'>
+                    <VARIABLE pos='132:61'>X</VARIABLE>
+                </PREDICATE>
+            </AND>
+        </IMPLIEDBY>
+    </FORALL>
+    <FORALL pos='138:0'>
+        <VARIABLE pos='138:7'>N</VARIABLE>
+        <IMPLIEDBY text='&lt;=' pos='138:24'>
+            <PREDICATE name='composite' pos='138:11'>
+                <VARIABLE pos='138:21'>N</VARIABLE>
+            </PREDICATE>
+            <AND text='&amp;' pos='138:33'>
+                <GT text='&gt;' pos='138:29'>
+                    <VARIABLE pos='138:27'>N</VARIABLE>
+                    <INTEGER pos='138:31'>1</INTEGER>
+                </GT>
+                <NOT text='~' pos='138:37'>
+                    <PREDICATE name='prime' pos='138:39'>
+                        <VARIABLE pos='138:45'>N</VARIABLE>
+                    </PREDICATE>
+                </NOT>
+            </AND>
+        </IMPLIEDBY>
+    </FORALL>
+    <FORALL pos='139:0'>
+        <VARIABLE pos='139:7'>N</VARIABLE>
+        <IMPLIEDBY text='&lt;=' pos='139:24'>
+            <PREDICATE name='composite' pos='139:11'>
+                <VARIABLE pos='139:21'>N</VARIABLE>
+            </PREDICATE>
+            <AND text='&amp;' pos='139:33'>
+                <GT text='&gt;' pos='139:29'>
+                    <VARIABLE pos='139:27'>N</VARIABLE>
+                    <INTEGER pos='139:31'>1</INTEGER>
+                </GT>
+                <NOT pos='139:35'>
+                    <PREDICATE name='prime' pos='139:39'>
+                        <VARIABLE pos='139:45'>N</VARIABLE>
+                    </PREDICATE>
+                </NOT>
+            </AND>
+        </IMPLIEDBY>
+    </FORALL>
+</KB>

@@ -1,0 +1,108 @@
+<KB>
+    <FORALL>
+        <VARLIST>
+            <VARIABLE>X</VARIABLE>
+            <VARIABLE>Y</VARIABLE>
+        </VARLIST>
+        <IMPLIES>
+            <PREDICATE name='brother'>
+                <VARIABLE>X</VARIABLE>
+                <VARIABLE>Y</VARIABLE>
+            </PREDICATE>
+            <PREDICATE name='sibling'>
+                <VARIABLE>X</VARIABLE>
+                <VARIABLE>Y</VARIABLE>
+            </PREDICATE>
+        </IMPLIES>
+    </FORALL>
+    <FORALL>
+        <VARLIST>
+            <VARIABLE>X</VARIABLE>
+            <VARIABLE>Y</VARIABLE>
+        </VARLIST>
+        <IMPLIES>
+            <PREDICATE name='sister'>
+                <VARIABLE>X</VARIABLE>
+                <VARIABLE>Y</VARIABLE>
+            </PREDICATE>
+            <PREDICATE name='sibling'>
+                <VARIABLE>X</VARIABLE>
+                <VARIABLE>Y</VARIABLE>
+            </PREDICATE>
+        </IMPLIES>
+    </FORALL>
+    <FORALL>
+        <VARLIST>
+            <VARIABLE>X</VARIABLE>
+            <VARIABLE>Y</VARIABLE>
+            <VARIABLE>Z</VARIABLE>
+        </VARLIST>
+        <IMPLIES>
+            <AND>
+                <PREDICATE name='mother'>
+                    <VARIABLE>X</VARIABLE>
+                    <VARIABLE>Y</VARIABLE>
+                </PREDICATE>
+                <PREDICATE name='sibling'>
+                    <VARIABLE>Y</VARIABLE>
+                    <VARIABLE>Z</VARIABLE>
+                </PREDICATE>
+            </AND>
+            <PREDICATE name='mother'>
+                <VARIABLE>X</VARIABLE>
+                <VARIABLE>Z</VARIABLE>
+            </PREDICATE>
+        </IMPLIES>
+    </FORALL>
+    <FORALL>
+        <VARLIST>
+            <VARIABLE>A</VARIABLE>
+            <VARIABLE>B</VARIABLE>
+        </VARLIST>
+        <IMPLIEDBY>
+            <PREDICATE name='ancestor'>
+                <VARIABLE>A</VARIABLE>
+                <VARIABLE>B</VARIABLE>
+            </PREDICATE>
+            <PREDICATE name='mother'>
+                <VARIABLE>A</VARIABLE>
+                <VARIABLE>B</VARIABLE>
+            </PREDICATE>
+        </IMPLIEDBY>
+    </FORALL>
+    <FORALL>
+        <VARLIST>
+            <VARIABLE>A</VARIABLE>
+            <VARIABLE>B</VARIABLE>
+            <VARIABLE>C</VARIABLE>
+        </VARLIST>
+        <IMPLIES>
+            <AND>
+                <PREDICATE name='ancestor'>
+                    <VARIABLE>A</VARIABLE>
+                    <VARIABLE>B</VARIABLE>
+                </PREDICATE>
+                <PREDICATE name='mother'>
+                    <VARIABLE>B</VARIABLE>
+                    <VARIABLE>C</VARIABLE>
+                </PREDICATE>
+            </AND>
+            <PREDICATE name='ancestor'>
+                <VARIABLE>A</VARIABLE>
+                <VARIABLE>C</VARIABLE>
+            </PREDICATE>
+        </IMPLIES>
+    </FORALL>
+    <PREDICATE name='brother'>
+        <CONSTANT>bran</CONSTANT>
+        <CONSTANT>sansa</CONSTANT>
+    </PREDICATE>
+    <PREDICATE name='sister'>
+        <CONSTANT>sansa</CONSTANT>
+        <CONSTANT>bran</CONSTANT>
+    </PREDICATE>
+    <PREDICATE name='mother'>
+        <CONSTANT>catelyn</CONSTANT>
+        <CONSTANT>bran</CONSTANT>
+    </PREDICATE>
+</KB>

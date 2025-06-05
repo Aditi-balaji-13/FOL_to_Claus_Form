@@ -1,0 +1,8 @@
+brother(bran,sansa)
+sister(sansa,bran)
+mother(catelyn,bran)
+(~(brother(X_0,Y_0))) or (sibling(X_0,Y_0))
+(~(sister(X_1,Y_1))) or (sibling(X_1,Y_1))
+(mother(X_2,Z_2)) or ((mother(X_2,Y_2)) and (sibling(Y_2,Z_2)))
+(~(mother(A_3,B_3))) or (ancestor(A_3,B_3))
+(ancestor(A_4,C_4)) or ((ancestor(A_4,B_4)) and (mother(B_4,C_4)))

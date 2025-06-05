@@ -1,0 +1,975 @@
+<KB>
+    <FORALL>
+        <VARLIST>
+            <VARIABLE>X</VARIABLE>
+            <VARIABLE>Y</VARIABLE>
+            <VARIABLE>Z</VARIABLE>
+        </VARLIST>
+        <IMPLIES>
+            <AND>
+                <PREDICATE name='p'>
+                    <VARIABLE>X</VARIABLE>
+                    <VARIABLE>Y</VARIABLE>
+                </PREDICATE>
+                <PREDICATE name='p'>
+                    <VARIABLE>Y</VARIABLE>
+                    <VARIABLE>Z</VARIABLE>
+                </PREDICATE>
+            </AND>
+            <PREDICATE name='p'>
+                <VARIABLE>X</VARIABLE>
+                <VARIABLE>Z</VARIABLE>
+            </PREDICATE>
+        </IMPLIES>
+    </FORALL>
+    <FORALL>
+        <VARLIST>
+            <VARIABLE>X</VARIABLE>
+            <VARIABLE>Y</VARIABLE>
+        </VARLIST>
+        <IMPLIES>
+            <AND>
+                <PREDICATE name='p'>
+                    <VARIABLE>X</VARIABLE>
+                    <VARIABLE>Y</VARIABLE>
+                </PREDICATE>
+                <PREDICATE name='p'>
+                    <VARIABLE>Y</VARIABLE>
+                    <VARIABLE>X</VARIABLE>
+                </PREDICATE>
+            </AND>
+            <EQ>
+                <VARIABLE>X</VARIABLE>
+                <VARIABLE>Y</VARIABLE>
+            </EQ>
+        </IMPLIES>
+    </FORALL>
+    <FORALL>
+        <VARLIST>
+            <VARIABLE>X</VARIABLE>
+            <VARIABLE>Y</VARIABLE>
+        </VARLIST>
+        <IMPLIES>
+            <PREDICATE name='p'>
+                <CONSTANT>a</CONSTANT>
+                <VARIABLE>Y</VARIABLE>
+            </PREDICATE>
+            <PREDICATE name='p'>
+                <VARIABLE>X</VARIABLE>
+                <CONSTANT>b</CONSTANT>
+            </PREDICATE>
+        </IMPLIES>
+    </FORALL>
+    <FORALL>
+        <VARIABLE>Y</VARIABLE>
+        <IMPLIES>
+            <AND>
+                <PREDICATE name='rich'>
+                    <VARIABLE>Y</VARIABLE>
+                </PREDICATE>
+                <PREDICATE name='man'>
+                    <VARIABLE>Y</VARIABLE>
+                </PREDICATE>
+            </AND>
+            <PREDICATE name='loves'>
+                <VARIABLE>Y</VARIABLE>
+                <CONSTANT>jane</CONSTANT>
+            </PREDICATE>
+        </IMPLIES>
+    </FORALL>
+    <FORALL>
+        <VARIABLE>Y</VARIABLE>
+        <IMPLIES>
+            <AND>
+                <PREDICATE name='woman'>
+                    <VARIABLE>Y</VARIABLE>
+                </PREDICATE>
+                <NE>
+                    <VARIABLE>Y</VARIABLE>
+                    <CONSTANT>jane</CONSTANT>
+                </NE>
+            </AND>
+            <PREDICATE name='loves'>
+                <VARIABLE>Y</VARIABLE>
+                <CONSTANT>john</CONSTANT>
+            </PREDICATE>
+        </IMPLIES>
+    </FORALL>
+    <FORALL>
+        <VARLIST>
+            <VARIABLE>X</VARIABLE>
+            <VARIABLE>Y</VARIABLE>
+        </VARLIST>
+        <IMPLIES>
+            <PREDICATE name='loves'>
+                <VARIABLE>X</VARIABLE>
+                <VARIABLE>Y</VARIABLE>
+            </PREDICATE>
+            <NOT>
+                <PREDICATE name='blackMails'>
+                    <VARIABLE>X</VARIABLE>
+                    <VARIABLE>Y</VARIABLE>
+                </PREDICATE>
+            </NOT>
+        </IMPLIES>
+    </FORALL>
+    <OR>
+        <PREDICATE name='loves'>
+            <CONSTANT>jane</CONSTANT>
+            <CONSTANT>john</CONSTANT>
+        </PREDICATE>
+        <PREDICATE name='loves'>
+            <CONSTANT>jane</CONSTANT>
+            <CONSTANT>jim</CONSTANT>
+        </PREDICATE>
+    </OR>
+    <EXISTS>
+        <VARIABLE>X</VARIABLE>
+        <AND>
+            <PREDICATE name='adult'>
+                <VARIABLE>X</VARIABLE>
+            </PREDICATE>
+            <PREDICATE name='blackMails'>
+                <VARIABLE>X</VARIABLE>
+                <CONSTANT>john</CONSTANT>
+            </PREDICATE>
+        </AND>
+    </EXISTS>
+    <FORALL>
+        <VARIABLE>X</VARIABLE>
+        <IMPLIES>
+            <PREDICATE name='man'>
+                <VARIABLE>X</VARIABLE>
+            </PREDICATE>
+            <NOT>
+                <PREDICATE name='woman'>
+                    <CONSTANT>x</CONSTANT>
+                </PREDICATE>
+            </NOT>
+        </IMPLIES>
+    </FORALL>
+    <FORALL>
+        <VARIABLE>X</VARIABLE>
+        <IMPLIES>
+            <PREDICATE name='surgeon'>
+                <VARIABLE>X</VARIABLE>
+            </PREDICATE>
+            <PREDICATE name='doctor'>
+                <VARIABLE>X</VARIABLE>
+            </PREDICATE>
+        </IMPLIES>
+    </FORALL>
+    <FORALL>
+        <VARIABLE>X</VARIABLE>
+        <IMPLIES>
+            <PREDICATE name='adult'>
+                <VARIABLE>X</VARIABLE>
+            </PREDICATE>
+            <OR>
+                <PREDICATE name='man'>
+                    <VARIABLE>X</VARIABLE>
+                </PREDICATE>
+                <PREDICATE name='woman'>
+                    <VARIABLE>X</VARIABLE>
+                </PREDICATE>
+            </OR>
+        </IMPLIES>
+    </FORALL>
+    <FORALL>
+        <VARLIST>
+            <VARIABLE>X</VARIABLE>
+            <VARIABLE>Y</VARIABLE>
+        </VARLIST>
+        <IMPLIES>
+            <PREDICATE name='marriedTo'>
+                <VARIABLE>X</VARIABLE>
+                <VARIABLE>Y</VARIABLE>
+            </PREDICATE>
+            <PREDICATE name='marriedTo'>
+                <VARIABLE>Y</VARIABLE>
+                <VARIABLE>X</VARIABLE>
+            </PREDICATE>
+        </IMPLIES>
+    </FORALL>
+    <FORALL>
+        <VARLIST>
+            <VARIABLE>X</VARIABLE>
+            <VARIABLE>Y</VARIABLE>
+        </VARLIST>
+        <IMPLIES>
+            <PREDICATE name='parentOf'>
+                <VARIABLE>X</VARIABLE>
+                <VARIABLE>Y</VARIABLE>
+            </PREDICATE>
+            <PREDICATE name='childOf'>
+                <VARIABLE>Y</VARIABLE>
+                <VARIABLE>X</VARIABLE>
+            </PREDICATE>
+        </IMPLIES>
+    </FORALL>
+    <FORALL>
+        <VARLIST>
+            <VARIABLE>X</VARIABLE>
+            <VARIABLE>Y</VARIABLE>
+        </VARLIST>
+        <IMPLIES>
+            <PREDICATE name='marriedTo'>
+                <VARIABLE>X</VARIABLE>
+                <VARIABLE>Y</VARIABLE>
+            </PREDICATE>
+            <AND>
+                <PREDICATE name='person'>
+                    <VARIABLE>X</VARIABLE>
+                </PREDICATE>
+                <PREDICATE name='person'>
+                    <VARIABLE>Y</VARIABLE>
+                </PREDICATE>
+            </AND>
+        </IMPLIES>
+    </FORALL>
+    <FORALL>
+        <VARIABLE>X</VARIABLE>
+        <IFF>
+            <PREDICATE name='richMan'>
+                <VARIABLE>X</VARIABLE>
+            </PREDICATE>
+            <AND>
+                <PREDICATE name='rich'>
+                    <VARIABLE>X</VARIABLE>
+                </PREDICATE>
+                <PREDICATE name='man'>
+                    <VARIABLE>X</VARIABLE>
+                </PREDICATE>
+            </AND>
+        </IFF>
+    </FORALL>
+    <FORALL>
+        <VARIABLE>X</VARIABLE>
+        <IMPLIES>
+            <PREDICATE name='man'>
+                <VARIABLE>X</VARIABLE>
+            </PREDICATE>
+            <NOT>
+                <PREDICATE name='woman'>
+                    <CONSTANT>x</CONSTANT>
+                </PREDICATE>
+            </NOT>
+        </IMPLIES>
+    </FORALL>
+    <FORALL>
+        <VARIABLE>X</VARIABLE>
+        <IMPLIES>
+            <PREDICATE name='surgeon'>
+                <VARIABLE>X</VARIABLE>
+            </PREDICATE>
+            <PREDICATE name='doctor'>
+                <VARIABLE>X</VARIABLE>
+            </PREDICATE>
+        </IMPLIES>
+    </FORALL>
+    <FORALL>
+        <VARIABLE>X</VARIABLE>
+        <IMPLIES>
+            <PREDICATE name='adult'>
+                <VARIABLE>X</VARIABLE>
+            </PREDICATE>
+            <OR>
+                <PREDICATE name='man'>
+                    <VARIABLE>X</VARIABLE>
+                </PREDICATE>
+                <PREDICATE name='woman'>
+                    <VARIABLE>X</VARIABLE>
+                </PREDICATE>
+            </OR>
+        </IMPLIES>
+    </FORALL>
+    <FORALL>
+        <VARLIST>
+            <VARIABLE>X</VARIABLE>
+            <VARIABLE>Y</VARIABLE>
+        </VARLIST>
+        <IMPLIES>
+            <PREDICATE name='marriedTo'>
+                <VARIABLE>X</VARIABLE>
+                <VARIABLE>Y</VARIABLE>
+            </PREDICATE>
+            <PREDICATE name='marriedTo'>
+                <VARIABLE>Y</VARIABLE>
+                <VARIABLE>X</VARIABLE>
+            </PREDICATE>
+        </IMPLIES>
+    </FORALL>
+    <FORALL>
+        <VARLIST>
+            <VARIABLE>X</VARIABLE>
+            <VARIABLE>Y</VARIABLE>
+        </VARLIST>
+        <IMPLIES>
+            <PREDICATE name='parentOf'>
+                <VARIABLE>X</VARIABLE>
+                <VARIABLE>Y</VARIABLE>
+            </PREDICATE>
+            <PREDICATE name='childOf'>
+                <VARIABLE>Y</VARIABLE>
+                <VARIABLE>X</VARIABLE>
+            </PREDICATE>
+        </IMPLIES>
+    </FORALL>
+    <FORALL>
+        <VARLIST>
+            <VARIABLE>X</VARIABLE>
+            <VARIABLE>Y</VARIABLE>
+        </VARLIST>
+        <IMPLIES>
+            <PREDICATE name='marriedTo'>
+                <VARIABLE>X</VARIABLE>
+                <VARIABLE>Y</VARIABLE>
+            </PREDICATE>
+            <AND>
+                <PREDICATE name='person'>
+                    <VARIABLE>X</VARIABLE>
+                </PREDICATE>
+                <PREDICATE name='person'>
+                    <VARIABLE>Y</VARIABLE>
+                </PREDICATE>
+            </AND>
+        </IMPLIES>
+    </FORALL>
+    <FORALL>
+        <VARIABLE>X</VARIABLE>
+        <IFF>
+            <PREDICATE name='richMan'>
+                <VARIABLE>X</VARIABLE>
+            </PREDICATE>
+            <AND>
+                <PREDICATE name='rich'>
+                    <VARIABLE>X</VARIABLE>
+                </PREDICATE>
+                <PREDICATE name='man'>
+                    <VARIABLE>X</VARIABLE>
+                </PREDICATE>
+            </AND>
+        </IFF>
+    </FORALL>
+    <FORALL>
+        <VARLIST>
+            <VARIABLE>A</VARIABLE>
+            <VARIABLE>B</VARIABLE>
+            <VARIABLE>C</VARIABLE>
+        </VARLIST>
+        <IMPLIEDBY>
+            <AND>
+                <PREDICATE name='append'>
+                    <VARIABLE>A</VARIABLE>
+                    <VARIABLE>B</VARIABLE>
+                    <VARIABLE>C</VARIABLE>
+                </PREDICATE>
+                <EQ>
+                    <VARIABLE>C</VARIABLE>
+                    <VARIABLE>B</VARIABLE>
+                </EQ>
+            </AND>
+            <EQ>
+                <VARIABLE>A</VARIABLE>
+                <NIL/>
+            </EQ>
+        </IMPLIEDBY>
+    </FORALL>
+    <FORALL>
+        <VARLIST>
+            <VARIABLE>X</VARIABLE>
+            <VARIABLE>A</VARIABLE>
+            <VARIABLE>B</VARIABLE>
+            <VARIABLE>C</VARIABLE>
+        </VARLIST>
+        <IMPLIEDBY>
+            <PREDICATE name='append'>
+                <CONS>
+                    <VARIABLE>X</VARIABLE>
+                    <VARIABLE>A</VARIABLE>
+                </CONS>
+                <VARIABLE>B</VARIABLE>
+                <CONS>
+                    <VARIABLE>X</VARIABLE>
+                    <VARIABLE>C</VARIABLE>
+                </CONS>
+            </PREDICATE>
+            <PREDICATE name='append'>
+                <VARIABLE>A</VARIABLE>
+                <VARIABLE>B</VARIABLE>
+                <VARIABLE>C</VARIABLE>
+            </PREDICATE>
+        </IMPLIEDBY>
+    </FORALL>
+    <FORALL>
+        <VARLIST>
+            <VARIABLE>P</VARIABLE>
+            <VARIABLE>X</VARIABLE>
+        </VARLIST>
+        <IMPLIEDBY>
+            <PREDICATE name='parent'>
+                <VARIABLE>P</VARIABLE>
+                <VARIABLE>X</VARIABLE>
+            </PREDICATE>
+            <PREDICATE name='mother'>
+                <VARIABLE>P</VARIABLE>
+                <VARIABLE>X</VARIABLE>
+            </PREDICATE>
+        </IMPLIEDBY>
+    </FORALL>
+    <FORALL>
+        <VARLIST>
+            <VARIABLE>P</VARIABLE>
+            <VARIABLE>X</VARIABLE>
+        </VARLIST>
+        <IMPLIEDBY>
+            <PREDICATE name='parent'>
+                <VARIABLE>P</VARIABLE>
+                <VARIABLE>X</VARIABLE>
+            </PREDICATE>
+            <PREDICATE name='father'>
+                <VARIABLE>P</VARIABLE>
+                <VARIABLE>X</VARIABLE>
+            </PREDICATE>
+        </IMPLIEDBY>
+    </FORALL>
+    <FORALL>
+        <VARLIST>
+            <VARIABLE>G</VARIABLE>
+            <VARIABLE>P</VARIABLE>
+        </VARLIST>
+        <IMPLIEDBY>
+            <PREDICATE name='grandparent'>
+                <VARIABLE>G</VARIABLE>
+                <VARIABLE>X</VARIABLE>
+            </PREDICATE>
+            <AND>
+                <PREDICATE name='parent'>
+                    <VARIABLE>G</VARIABLE>
+                    <VARIABLE>P</VARIABLE>
+                </PREDICATE>
+                <PREDICATE name='parent'>
+                    <VARIABLE>P</VARIABLE>
+                    <VARIABLE>X</VARIABLE>
+                </PREDICATE>
+            </AND>
+        </IMPLIEDBY>
+    </FORALL>
+    <FORALL>
+        <VARLIST>
+            <VARIABLE>A</VARIABLE>
+            <VARIABLE>B</VARIABLE>
+        </VARLIST>
+        <IMPLIEDBY>
+            <PREDICATE name='ancestor'>
+                <VARIABLE>A</VARIABLE>
+                <VARIABLE>B</VARIABLE>
+            </PREDICATE>
+            <PREDICATE name='parent'>
+                <VARIABLE>A</VARIABLE>
+                <VARIABLE>B</VARIABLE>
+            </PREDICATE>
+        </IMPLIEDBY>
+    </FORALL>
+    <FORALL>
+        <VARLIST>
+            <VARIABLE>A</VARIABLE>
+            <VARIABLE>X</VARIABLE>
+            <VARIABLE>B</VARIABLE>
+        </VARLIST>
+        <IMPLIEDBY>
+            <PREDICATE name='ancestor'>
+                <VARIABLE>A</VARIABLE>
+                <VARIABLE>B</VARIABLE>
+            </PREDICATE>
+            <AND>
+                <PREDICATE name='parent'>
+                    <VARIABLE>A</VARIABLE>
+                    <VARIABLE>X</VARIABLE>
+                </PREDICATE>
+                <PREDICATE name='ancestor'>
+                    <VARIABLE>X</VARIABLE>
+                    <VARIABLE>B</VARIABLE>
+                </PREDICATE>
+            </AND>
+        </IMPLIEDBY>
+    </FORALL>
+    <FORALL>
+        <VARLIST>
+            <VARIABLE>A</VARIABLE>
+            <VARIABLE>B</VARIABLE>
+        </VARLIST>
+        <IMPLIEDBY>
+            <PREDICATE name='ancestor2'>
+                <VARIABLE>A</VARIABLE>
+                <VARIABLE>B</VARIABLE>
+            </PREDICATE>
+            <PREDICATE name='parent'>
+                <VARIABLE>A</VARIABLE>
+                <VARIABLE>B</VARIABLE>
+            </PREDICATE>
+        </IMPLIEDBY>
+    </FORALL>
+    <FORALL>
+        <VARLIST>
+            <VARIABLE>A</VARIABLE>
+            <VARIABLE>X</VARIABLE>
+            <VARIABLE>B</VARIABLE>
+        </VARLIST>
+        <IMPLIEDBY>
+            <PREDICATE name='ancestor2'>
+                <VARIABLE>A</VARIABLE>
+                <VARIABLE>B</VARIABLE>
+            </PREDICATE>
+            <AND>
+                <PREDICATE name='parent'>
+                    <VARIABLE>X</VARIABLE>
+                    <VARIABLE>B</VARIABLE>
+                </PREDICATE>
+                <PREDICATE name='ancestor2'>
+                    <VARIABLE>A</VARIABLE>
+                    <VARIABLE>X</VARIABLE>
+                </PREDICATE>
+            </AND>
+        </IMPLIEDBY>
+    </FORALL>
+    <FORALL>
+        <VARLIST>
+            <VARIABLE>A</VARIABLE>
+            <VARIABLE>B</VARIABLE>
+        </VARLIST>
+        <IMPLIEDBY>
+            <PREDICATE name='ancestor3'>
+                <VARIABLE>A</VARIABLE>
+                <VARIABLE>B</VARIABLE>
+            </PREDICATE>
+            <PREDICATE name='parent'>
+                <VARIABLE>A</VARIABLE>
+                <VARIABLE>B</VARIABLE>
+            </PREDICATE>
+        </IMPLIEDBY>
+    </FORALL>
+    <FORALL>
+        <VARLIST>
+            <VARIABLE>A</VARIABLE>
+            <VARIABLE>X</VARIABLE>
+            <VARIABLE>B</VARIABLE>
+        </VARLIST>
+        <IMPLIEDBY>
+            <PREDICATE name='ancestor3'>
+                <VARIABLE>A</VARIABLE>
+                <VARIABLE>B</VARIABLE>
+            </PREDICATE>
+            <AND>
+                <PREDICATE name='ancestor3'>
+                    <VARIABLE>A</VARIABLE>
+                    <VARIABLE>X</VARIABLE>
+                </PREDICATE>
+                <PREDICATE name='ancestor3'>
+                    <VARIABLE>X</VARIABLE>
+                    <VARIABLE>B</VARIABLE>
+                </PREDICATE>
+            </AND>
+        </IMPLIEDBY>
+    </FORALL>
+    <FORALL>
+        <VARLIST>
+            <VARIABLE>N</VARIABLE>
+            <VARIABLE>V</VARIABLE>
+        </VARLIST>
+        <IMPLIEDBY>
+            <PREDICATE name='fib'>
+                <VARIABLE>N</VARIABLE>
+                <VARIABLE>V</VARIABLE>
+            </PREDICATE>
+            <AND>
+                <EQ>
+                    <VARIABLE>N</VARIABLE>
+                    <INTEGER>0</INTEGER>
+                </EQ>
+                <EQ>
+                    <VARIABLE>V</VARIABLE>
+                    <INTEGER>1</INTEGER>
+                </EQ>
+            </AND>
+        </IMPLIEDBY>
+    </FORALL>
+    <FORALL>
+        <VARLIST>
+            <VARIABLE>N</VARIABLE>
+            <VARIABLE>V</VARIABLE>
+        </VARLIST>
+        <IMPLIEDBY>
+            <PREDICATE name='fib'>
+                <VARIABLE>N</VARIABLE>
+                <VARIABLE>V</VARIABLE>
+            </PREDICATE>
+            <AND>
+                <EQ>
+                    <VARIABLE>N</VARIABLE>
+                    <INTEGER>1</INTEGER>
+                </EQ>
+                <EQ>
+                    <VARIABLE>V</VARIABLE>
+                    <INTEGER>1</INTEGER>
+                </EQ>
+            </AND>
+        </IMPLIEDBY>
+    </FORALL>
+    <FORALL>
+        <VARLIST>
+            <VARIABLE>N</VARIABLE>
+            <VARIABLE>U</VARIABLE>
+            <VARIABLE>V</VARIABLE>
+        </VARLIST>
+        <IMPLIEDBY>
+            <PREDICATE name='fib'>
+                <ADD>
+                    <VARIABLE>N</VARIABLE>
+                    <INTEGER>2</INTEGER>
+                </ADD>
+                <ADD>
+                    <VARIABLE>U</VARIABLE>
+                    <VARIABLE>V</VARIABLE>
+                </ADD>
+            </PREDICATE>
+            <AND>
+                <PREDICATE name='fib'>
+                    <VARIABLE>N</VARIABLE>
+                    <VARIABLE>U</VARIABLE>
+                </PREDICATE>
+                <PREDICATE name='fib'>
+                    <ADD>
+                        <VARIABLE>N</VARIABLE>
+                        <INTEGER>1</INTEGER>
+                    </ADD>
+                    <VARIABLE>V</VARIABLE>
+                </PREDICATE>
+            </AND>
+        </IMPLIEDBY>
+    </FORALL>
+    <FORALL>
+        <VARLIST>
+            <VARIABLE>N</VARIABLE>
+            <VARIABLE>V</VARIABLE>
+        </VARLIST>
+        <IMPLIEDBY>
+            <PREDICATE name='fib'>
+                <VARIABLE>N</VARIABLE>
+                <VARIABLE>V</VARIABLE>
+            </PREDICATE>
+            <AND>
+                <EQ>
+                    <VARIABLE>N</VARIABLE>
+                    <INTEGER>0</INTEGER>
+                </EQ>
+                <EQ>
+                    <VARIABLE>V</VARIABLE>
+                    <INTEGER>1</INTEGER>
+                </EQ>
+            </AND>
+        </IMPLIEDBY>
+    </FORALL>
+    <FORALL>
+        <VARLIST>
+            <VARIABLE>N</VARIABLE>
+            <VARIABLE>V</VARIABLE>
+        </VARLIST>
+        <IMPLIEDBY>
+            <PREDICATE name='fib'>
+                <VARIABLE>N</VARIABLE>
+                <VARIABLE>V</VARIABLE>
+            </PREDICATE>
+            <AND>
+                <EQ>
+                    <VARIABLE>N</VARIABLE>
+                    <INTEGER>1</INTEGER>
+                </EQ>
+                <EQ>
+                    <VARIABLE>V</VARIABLE>
+                    <INTEGER>1</INTEGER>
+                </EQ>
+            </AND>
+        </IMPLIEDBY>
+    </FORALL>
+    <FORALL>
+        <VARLIST>
+            <VARIABLE>N</VARIABLE>
+            <VARIABLE>U</VARIABLE>
+            <VARIABLE>V</VARIABLE>
+            <VARIABLE>W</VARIABLE>
+        </VARLIST>
+        <IMPLIEDBY>
+            <PREDICATE name='fib'>
+                <FUNCTION name='s'>
+                    <FUNCTION name='s'>
+                        <VARIABLE>N</VARIABLE>
+                    </FUNCTION>
+                </FUNCTION>
+                <VARIABLE>W</VARIABLE>
+            </PREDICATE>
+            <AND>
+                <AND>
+                    <PREDICATE name='fib'>
+                        <VARIABLE>N</VARIABLE>
+                        <VARIABLE>U</VARIABLE>
+                    </PREDICATE>
+                    <PREDICATE name='fib'>
+                        <FUNCTION name='s'>
+                            <VARIABLE>N</VARIABLE>
+                        </FUNCTION>
+                        <VARIABLE>V</VARIABLE>
+                    </PREDICATE>
+                </AND>
+                <PREDICATE name='plus'>
+                    <VARIABLE>U</VARIABLE>
+                    <VARIABLE>V</VARIABLE>
+                    <VARIABLE>W</VARIABLE>
+                </PREDICATE>
+            </AND>
+        </IMPLIEDBY>
+    </FORALL>
+    <FORALL>
+        <VARLIST>
+            <VARIABLE>A</VARIABLE>
+            <VARIABLE>B</VARIABLE>
+            <VARIABLE>C</VARIABLE>
+        </VARLIST>
+        <IMPLIEDBY>
+            <AND>
+                <PREDICATE name='plus'>
+                    <VARIABLE>A</VARIABLE>
+                    <VARIABLE>B</VARIABLE>
+                    <VARIABLE>C</VARIABLE>
+                </PREDICATE>
+                <EQ>
+                    <VARIABLE>C</VARIABLE>
+                    <VARIABLE>B</VARIABLE>
+                </EQ>
+            </AND>
+            <EQ>
+                <VARIABLE>A</VARIABLE>
+                <INTEGER>0</INTEGER>
+            </EQ>
+        </IMPLIEDBY>
+    </FORALL>
+    <FORALL>
+        <VARLIST>
+            <VARIABLE>A</VARIABLE>
+            <VARIABLE>B</VARIABLE>
+            <VARIABLE>C</VARIABLE>
+        </VARLIST>
+        <IMPLIEDBY>
+            <PREDICATE name='plus'>
+                <FUNCTION name='s'>
+                    <VARIABLE>A</VARIABLE>
+                </FUNCTION>
+                <VARIABLE>B</VARIABLE>
+                <VARIABLE>C</VARIABLE>
+            </PREDICATE>
+            <PREDICATE name='plus'>
+                <VARIABLE>A</VARIABLE>
+                <FUNCTION name='s'>
+                    <VARIABLE>B</VARIABLE>
+                </FUNCTION>
+                <VARIABLE>C</VARIABLE>
+            </PREDICATE>
+        </IMPLIEDBY>
+    </FORALL>
+    <FORALL>
+        <VARIABLE>N</VARIABLE>
+        <PREDICATE name='power'>
+            <INTEGER>0</INTEGER>
+            <VARIABLE>N</VARIABLE>
+            <INTEGER>1</INTEGER>
+        </PREDICATE>
+    </FORALL>
+    <FORALL>
+        <VARLIST>
+            <VARIABLE>A</VARIABLE>
+            <VARIABLE>N</VARIABLE>
+            <VARIABLE>V</VARIABLE>
+        </VARLIST>
+        <IMPLIEDBY>
+            <PREDICATE name='power'>
+                <VARIABLE>A</VARIABLE>
+                <VARIABLE>N</VARIABLE>
+                <VARIABLE>V</VARIABLE>
+            </PREDICATE>
+            <AND>
+                <PREDICATE name='even'>
+                    <VARIABLE>N</VARIABLE>
+                </PREDICATE>
+                <PREDICATE name='power'>
+                    <MUL>
+                        <VARIABLE>A</VARIABLE>
+                        <VARIABLE>A</VARIABLE>
+                    </MUL>
+                    <DIV>
+                        <VARIABLE>N</VARIABLE>
+                        <INTEGER>2</INTEGER>
+                    </DIV>
+                    <VARIABLE>V</VARIABLE>
+                </PREDICATE>
+            </AND>
+        </IMPLIEDBY>
+    </FORALL>
+    <FORALL>
+        <VARLIST>
+            <VARIABLE>A</VARIABLE>
+            <VARIABLE>N</VARIABLE>
+            <VARIABLE>V</VARIABLE>
+        </VARLIST>
+        <IMPLIEDBY>
+            <PREDICATE name='power'>
+                <VARIABLE>A</VARIABLE>
+                <VARIABLE>N</VARIABLE>
+                <MUL>
+                    <VARIABLE>A</VARIABLE>
+                    <VARIABLE>V</VARIABLE>
+                </MUL>
+            </PREDICATE>
+            <AND>
+                <NOT>
+                    <PREDICATE name='even'>
+                        <VARIABLE>N</VARIABLE>
+                    </PREDICATE>
+                </NOT>
+                <PREDICATE name='power'>
+                    <MUL>
+                        <VARIABLE>A</VARIABLE>
+                        <VARIABLE>A</VARIABLE>
+                    </MUL>
+                    <DIV>
+                        <SUB>
+                            <VARIABLE>N</VARIABLE>
+                            <INTEGER>1</INTEGER>
+                        </SUB>
+                        <INTEGER>2</INTEGER>
+                    </DIV>
+                    <VARIABLE>V</VARIABLE>
+                </PREDICATE>
+            </AND>
+        </IMPLIEDBY>
+    </FORALL>
+    <FORALL>
+        <VARLIST>
+            <VARIABLE>G</VARIABLE>
+            <VARIABLE>X</VARIABLE>
+        </VARLIST>
+        <IMPLIEDBY>
+            <PREDICATE name='grandparent'>
+                <VARIABLE>G</VARIABLE>
+                <VARIABLE>X</VARIABLE>
+            </PREDICATE>
+            <AND>
+                <PREDICATE name='parent'>
+                    <VARIABLE>G</VARIABLE>
+                    <VARIABLE>P</VARIABLE>
+                </PREDICATE>
+                <PREDICATE name='parent'>
+                    <VARIABLE>P</VARIABLE>
+                    <VARIABLE>X</VARIABLE>
+                </PREDICATE>
+            </AND>
+        </IMPLIEDBY>
+    </FORALL>
+    <FORALL>
+        <VARLIST>
+            <VARIABLE>X</VARIABLE>
+            <VARIABLE>Y</VARIABLE>
+            <VARIABLE>Z</VARIABLE>
+        </VARLIST>
+        <IMPLIEDBY>
+            <PREDICATE name='cousin'>
+                <VARIABLE>X</VARIABLE>
+                <VARIABLE>Y</VARIABLE>
+            </PREDICATE>
+            <AND>
+                <AND>
+                    <AND>
+                        <NOT>
+                            <EQ>
+                                <VARIABLE>X</VARIABLE>
+                                <VARIABLE>Y</VARIABLE>
+                            </EQ>
+                        </NOT>
+                        <NOT>
+                            <PREDICATE name='sibling'>
+                                <VARIABLE>X</VARIABLE>
+                                <VARIABLE>Y</VARIABLE>
+                            </PREDICATE>
+                        </NOT>
+                    </AND>
+                    <PREDICATE name='grandparent'>
+                        <VARIABLE>Z</VARIABLE>
+                        <VARIABLE>X</VARIABLE>
+                    </PREDICATE>
+                </AND>
+                <PREDICATE name='grandparent'>
+                    <VARIABLE>Z</VARIABLE>
+                    <VARIABLE>Y</VARIABLE>
+                </PREDICATE>
+            </AND>
+        </IMPLIEDBY>
+    </FORALL>
+    <FORALL>
+        <VARLIST>
+            <VARIABLE>X</VARIABLE>
+            <VARIABLE>Y</VARIABLE>
+        </VARLIST>
+        <IMPLIEDBY>
+            <PREDICATE name='americanCousin'>
+                <VARIABLE>X</VARIABLE>
+                <VARIABLE>Y</VARIABLE>
+            </PREDICATE>
+            <AND>
+                <PREDICATE name='cousin'>
+                    <VARIABLE>X</VARIABLE>
+                    <VARIABLE>Y</VARIABLE>
+                </PREDICATE>
+                <PREDICATE name='american'>
+                    <VARIABLE>X</VARIABLE>
+                </PREDICATE>
+            </AND>
+        </IMPLIEDBY>
+    </FORALL>
+    <FORALL>
+        <VARIABLE>N</VARIABLE>
+        <IMPLIEDBY>
+            <PREDICATE name='composite'>
+                <VARIABLE>N</VARIABLE>
+            </PREDICATE>
+            <AND>
+                <GT>
+                    <VARIABLE>N</VARIABLE>
+                    <INTEGER>1</INTEGER>
+                </GT>
+                <NOT>
+                    <PREDICATE name='prime'>
+                        <VARIABLE>N</VARIABLE>
+                    </PREDICATE>
+                </NOT>
+            </AND>
+        </IMPLIEDBY>
+    </FORALL>
+    <FORALL>
+        <VARIABLE>N</VARIABLE>
+        <IMPLIEDBY>
+            <PREDICATE name='composite'>
+                <VARIABLE>N</VARIABLE>
+            </PREDICATE>
+            <AND>
+                <GT>
+                    <VARIABLE>N</VARIABLE>
+                    <INTEGER>1</INTEGER>
+                </GT>
+                <NOT>
+                    <PREDICATE name='prime'>
+                        <VARIABLE>N</VARIABLE>
+                    </PREDICATE>
+                </NOT>
+            </AND>
+        </IMPLIEDBY>
+    </FORALL>
+</KB>

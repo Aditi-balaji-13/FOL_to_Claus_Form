@@ -1,0 +1,93 @@
+#---------------------------------------------------------------------
+# CONCEPTS
+#---------------------------------------------------------------------
+
+Class: Person
+    SubClassOf:      eats some Fruit
+    EquivalentTo:    Human
+    DisjointWith:    Fruit, Meat
+    DisjointUnionOf: Man, Woman
+
+Class: Vegetarian  EquivalentTo: Person, not (eats some Meat)
+Class: Parent  EquivalentTo: Person and hasChild some Person
+Class: Mother  EquivalentTo: Woman and Parent
+Class: Father  EquivalentTo: Man and Parent
+
+Class: TOAD
+    EquivalentTo: Teen and owns some AppleDevice
+    SubClassOf:   Happy
+
+Class: EcoFriendly
+    SubClassOf:   Person,
+                  owns only (powerSource only (Battery or Wind or Solar)),
+                  uses only ElectricVehicle
+
+Class: GreenEnergy
+    EquivalentTo: Battery or Wind or Solar
+
+#---------------------------------------------------------------------
+# ROLES
+#---------------------------------------------------------------------
+
+ObjectProperty: hasFamilyMember
+  Characteristics: Symmetric
+  Domain: Person
+  Range:  Person
+
+ObjectProperty: hasChild
+  Domain: Person
+  Range:  Person
+  InverseOf:  hasParent
+  SubPropertyOf: hasFamilyMember
+
+ObjectProperty: hasSon
+  Domain: Person
+  Range:  Man
+  SubPropertyOf: hasChild
+
+ObjectProperty: hasDaughter
+  Domain: Person
+  Range:  Woman
+  SubPropertyOf: hasChild
+
+ObjectProperty: hasMother
+  Characteristics: Functional
+  Domain: Person
+  Range:  Woman
+  SubPropertyOf: hasParent
+  DisjointWith: hasFather
+
+ObjectProperty: hasGrandmother
+  Domain: Person
+  Range:  Woman
+  SubPropertyOf: hasFamilyMember
+  DisjointWith: hasChild
+  SubPropertyChain: hasParent o hasMother
+
+#---------------------------------------------------------------------
+# INDIVIDUALS
+#---------------------------------------------------------------------
+
+Individual: Lucy
+  Types:  Woman, hasChild only Woman, hasHusband value Manny
+  Facts:  hasChild Lilly, hasDaughter Lilly, likes Apple, likes Orange
+  SameAs: SmartLucy
+  DifferentFrom: Manny, Lilly, Apple, Orange
+
+#---------------------------------------------------------------------
+# CONSTRAINTS
+#---------------------------------------------------------------------
+
+EquivalentClasses: NonVegetarian, not Vegetarian
+EquivalentClasses: Dead, not Alive
+
+DisjointClasses:   Fruit, Meat
+DisjointClasses:   Man, Woman
+
+EquivalentProperties: hasChild, hasKid
+DisjointProperties:   hasSon, hasDaughter, hasFather, hasMother, hasGrandmother
+
+SameIndividual: Manny, LazyManny
+SameIndividual: Lucy, SmartLucy
+DifferentIndividuals: Manny, Diego, Sid, Lucy, Manny, Lilly, Apple, Orange
+
